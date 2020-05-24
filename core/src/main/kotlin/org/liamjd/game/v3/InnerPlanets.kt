@@ -1,12 +1,9 @@
 package org.liamjd.game.v3
 
 import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Animation
-import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
-import com.badlogic.gdx.math.MathUtils
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Image
@@ -16,7 +13,7 @@ import com.badlogic.gdx.utils.Align
 import ktx.actors.onClick
 import ktx.actors.plusAssign
 import ktx.scene2d.*
-import org.liamjd.game.v3.actors.TextureActor
+import org.liamjd.game.v3.actors.*
 import com.badlogic.gdx.utils.Array as GdxArray
 
 
@@ -54,26 +51,57 @@ class InnerPlanets(game: Version3, stage: Stage, skin: Skin) : AbstractGameplayS
 			}
 		}
 
+
 		// Initialize the Animation with the frame interval and array of frames
-		animatedPlanet = AnimationActor(Animation<TextureRegion>(0.5f, redPlanetFrames), 0.15f, 0.15f)
-		animatedPlanet2 = AnimationActor(Animation<TextureRegion>(0.1f, redPlanetFrames), 0.45f, 0.45f)
+//		animatedPlanet = AnimationActor(Animation<TextureRegion>(0.5f, redPlanetFrames), 0.15f, 0.15f)
+//		animatedPlanet2 = AnimationActor(Animation<TextureRegion>(0.1f, redPlanetFrames), 0.45f, 0.45f)
 		val planet1Label = Label("Small planet",skin)
 		val planet2Label = Label("Large planet",skin)
-		animatedPlanet.setPosition(stage.width - 300f, ((stage.height / 2) - (redPlanetHeight * animatedPlanet.yScale) / 2))
-		animatedPlanet2.setPosition(stage.width - 200f, ((stage.height / 2) - (redPlanetHeight * animatedPlanet2.yScale) / 2))
-		planet1Label.setPosition(animatedPlanet.x,stage.height - 400f)
-		planet2Label.setPosition(animatedPlanet2.x,stage.height - 400f)
+//		animatedPlanet.setPosition(stage.width - 300f, ((stage.height / 2) - (redPlanetHeight * animatedPlanet.yScale) / 2))
+//		animatedPlanet2.setPosition(stage.width - 200f, ((stage.height / 2) - (redPlanetHeight * animatedPlanet2.yScale) / 2))
+//		planet1Label.setPosition(animatedPlanet.x,stage.height - 400f)
+//		planet2Label.setPosition(animatedPlanet2.x,stage.height - 400f)
+
 
 		// add an actor to the stage directly
 		stage += backgroundActor
-		stage += animatedPlanet
-		stage += planet1Label
-		stage += planet2Label
-		stage += animatedPlanet2
+//		stage += animatedPlanet
+//		stage += planet1Label
+//		stage += planet2Label
+//		stage += animatedPlanet2
+
+//		animatedPlanet.setBounds(animatedPlanet.x,animatedPlanet.y,100f,100f)
+		/*animatedPlanet.addListener(object : ClickListener() {
+			override fun clicked(event: InputEvent?, x: Float, y: Float) {
+				println("Clicked on planet 1: event: ${event} at $x,$y")
+			}
+
+			override fun enter(event: InputEvent?, x: Float, y: Float, pointer: Int, fromActor: Actor?) {
+				println("Entered planet 1: $event $x,$y pointer $pointer fromActor: $fromActor")
+			}
+
+			override fun exit(event: InputEvent?, x: Float, y: Float, pointer: Int, toActor: Actor?) {
+				println("Left planet 1: $event $x,$y pointer $pointer toActor: $toActor")
+			}
+		})*/
 
 //		stage += planet
 
 		stage.actors {
+
+			animation(name = "Planet 1", animation =  Animation<TextureRegion>(0.5f, redPlanetFrames) ,xScale = 0.2f, yScale = 0.2f) {
+				setPosition(stage.width - 600f, ((stage.height / 2) - (redPlanetHeight * this.yScale) / 2))
+				onClick {
+					println("Clicked on ${this.name}")
+				}
+				onEnter {
+					zoom()
+				}
+				onExit {
+					resetZoom()
+				}
+
+			}
 			table {
 //				debug()
 				setFillParent(true) // for the primary layout
@@ -123,25 +151,16 @@ class InnerPlanets(game: Version3, stage: Stage, skin: Skin) : AbstractGameplayS
 		super.render(delta)
 	}
 
-
 	override fun dispose() {
 		stage.dispose()
 		skin.dispose()
 	}
 }
 
-class AnimationActor(val animation: Animation<TextureRegion>, val xScale: Float, val yScale: Float) : Actor() {
-	lateinit var currentRegion: TextureRegion
-	var time = 0f
 
-	//... creating animation etc...
-	override fun act(delta: Float) {
-		time += delta
-		currentRegion = animation.getKeyFrame(time, true) as TextureRegion
-	}
 
-	override fun draw(batch: Batch, parentAlpha: Float) {
-//		super.draw(batch, parentAlpha)
-		batch.draw(currentRegion, x, y, currentRegion.regionWidth * xScale, currentRegion.regionHeight * yScale)
-	}
-}
+
+
+
+
+
