@@ -1,16 +1,24 @@
 package org.liamjd.game.v3
 
 import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Animation
+import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType
 import com.badlogic.gdx.scenes.scene2d.Actor
+import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.badlogic.gdx.utils.Align
 import ktx.actors.onClick
+import ktx.actors.onClickEvent
+import ktx.actors.onTouchUp
 import ktx.actors.plusAssign
 import ktx.scene2d.*
 import org.liamjd.game.v3.actors.*
@@ -28,11 +36,15 @@ class InnerPlanets(game: Version3, stage: Stage, skin: Skin) : AbstractGameplayS
 	lateinit var animatedPlanet: AnimationActor
 	lateinit var animatedPlanet2: AnimationActor
 
+	var shape: ShapeRenderer = ShapeRenderer()
+
 	override fun show() {
 		Scene2DSkin.defaultSkin = skin
 
 		// create a custom actor for displaying a texture image
 		val backgroundActor = TextureActor(Texture(Gdx.files.internal("ui/starfield.png")))
+
+		val bluePlanetActor = TextureActor(Texture(Gdx.files.internal("ui/planet64.png")))
 
 		// Load the sprite sheet as a Texture
 		val redPlanetTextureSheet = Texture(Gdx.files.internal("ui/red-planet-spritesheet.png"))
@@ -51,41 +63,40 @@ class InnerPlanets(game: Version3, stage: Stage, skin: Skin) : AbstractGameplayS
 			}
 		}
 
-
-		// Initialize the Animation with the frame interval and array of frames
-//		animatedPlanet = AnimationActor(Animation<TextureRegion>(0.5f, redPlanetFrames), 0.15f, 0.15f)
-//		animatedPlanet2 = AnimationActor(Animation<TextureRegion>(0.1f, redPlanetFrames), 0.45f, 0.45f)
+		bluePlanetActor.name = "Blue planet"
+		bluePlanetActor.setPosition(stage.width - 400f, (stage.height / 2f))
+		// still don't understand this
+		bluePlanetActor.addListener(object : ClickListener() {
+			override fun clicked(event: InputEvent, x: Float, y: Float) {
+				println("Blue planet clicked")
+			}
+		})
 		val planet1Label = Label("Small planet",skin)
 		val planet2Label = Label("Large planet",skin)
-//		animatedPlanet.setPosition(stage.width - 300f, ((stage.height / 2) - (redPlanetHeight * animatedPlanet.yScale) / 2))
-//		animatedPlanet2.setPosition(stage.width - 200f, ((stage.height / 2) - (redPlanetHeight * animatedPlanet2.yScale) / 2))
 //		planet1Label.setPosition(animatedPlanet.x,stage.height - 400f)
 //		planet2Label.setPosition(animatedPlanet2.x,stage.height - 400f)
 
 
 		// add an actor to the stage directly
 		stage += backgroundActor
-//		stage += animatedPlanet
 //		stage += planet1Label
 //		stage += planet2Label
-//		stage += animatedPlanet2
+		stage += bluePlanetActor
 
-//		animatedPlanet.setBounds(animatedPlanet.x,animatedPlanet.y,100f,100f)
-		/*animatedPlanet.addListener(object : ClickListener() {
-			override fun clicked(event: InputEvent?, x: Float, y: Float) {
-				println("Clicked on planet 1: event: ${event} at $x,$y")
+		// horizontal centre line
+		stage.addActor(object : Actor() {
+			override fun draw(batch: Batch?, parentAlpha: Float) {
+				if(batch != null) {
+					batch.end()
+					shape.setProjectionMatrix(stage.camera.combined)
+					shape.begin(ShapeType.Line)
+					shape.setColor(Color.RED)
+					shape.rect(0f, stage.height / 2f, stage.width, 1f)
+					shape.end()
+					batch.begin()
+				}
 			}
-
-			override fun enter(event: InputEvent?, x: Float, y: Float, pointer: Int, fromActor: Actor?) {
-				println("Entered planet 1: $event $x,$y pointer $pointer fromActor: $fromActor")
-			}
-
-			override fun exit(event: InputEvent?, x: Float, y: Float, pointer: Int, toActor: Actor?) {
-				println("Left planet 1: $event $x,$y pointer $pointer toActor: $toActor")
-			}
-		})*/
-
-//		stage += planet
+		})
 
 		stage.actors {
 
@@ -100,8 +111,26 @@ class InnerPlanets(game: Version3, stage: Stage, skin: Skin) : AbstractGameplayS
 				onExit {
 					resetZoom()
 				}
-
 			}
+
+			animation(name = "Planet 2", animation =  Animation<TextureRegion>(0.5f, redPlanetFrames) ,xScale = 0.4f, yScale = 0.4f) {
+				setPosition(stage.width - 300f, ((stage.height / 2) - (redPlanetHeight * this.yScale) / 2))
+				onClickEvent { event, actor ->
+					println("onClick x,y: $x,$y - stageX,stageY: ${event.stageX},${event.stageY}")
+				}
+//				onClick {
+//					println("Clicked on ${this.name}")
+//				}
+				onEnter {
+					println("onEnter x,y $x,$y")
+					zoom()
+				}
+				onTouchUp { println("onTouchUp x,y $x,$y") }
+				onExit {
+					resetZoom()
+				}
+			}
+
 			table {
 //				debug()
 				setFillParent(true) // for the primary layout
