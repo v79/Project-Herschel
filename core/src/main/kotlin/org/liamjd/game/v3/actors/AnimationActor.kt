@@ -6,11 +6,19 @@ import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.scenes.scene2d.Actor
+import com.badlogic.gdx.scenes.scene2d.actions.Actions.moveBy
 import ktx.scene2d.RootWidget
 import ktx.scene2d.Scene2dDsl
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
+
+fun zoom() {
+//	println("\tZoom called: hover: $hover, clicked: $clicked")
+//	scaleBy(0.05f)
+	moveBy(-10f, -10f)
+}
+
 
 class AnimationActor(name: String, val animation: Animation<TextureRegion>, val xScale: Float, val yScale: Float) : Actor() {
 
@@ -18,30 +26,27 @@ class AnimationActor(name: String, val animation: Animation<TextureRegion>, val 
 	var time = 0f
 	private val frameWidth = animation.getKeyFrame(0f).regionWidth.toFloat()
 	private val frameHeight = animation.getKeyFrame(0f).regionHeight.toFloat()
-	private var hover: Boolean = false
+	public var hover: Boolean = false
+	var clicked = false
 	val haloRenderer = ShapeRenderer()
 
 	init {
-		debug()
 		println("Initialising animation $name")
 		setName(name)
 		setScale(xScale,yScale)
 		setBounds(this.x,this.y,frameWidth,frameHeight)
 	}
 
-
 	fun zoom() {
-		hover = true
+		println("\tZoom called: hover: $hover, clicked: $clicked")
 		scaleBy(0.05f)
-		x = x - 10f
-		y = y - 10f
+		moveBy(-10f, -10f)
 	}
 
 	fun resetZoom() {
-		hover = false
-		setScale(xScale,yScale)
-		x = x + 10f
-		y = y +10f
+		println("\tResetting zoom: hover: $hover, clicked: $clicked")
+		setScale(xScale, yScale)
+		moveBy(10f, 10f)
 	}
 
 	//... creating animation etc...

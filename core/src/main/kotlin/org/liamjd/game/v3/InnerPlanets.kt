@@ -17,11 +17,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.badlogic.gdx.utils.Align
 import ktx.actors.onClick
-import ktx.actors.onClickEvent
-import ktx.actors.onTouchUp
 import ktx.actors.plusAssign
 import ktx.scene2d.*
-import org.liamjd.game.v3.actors.*
+import org.liamjd.game.v3.actors.AnimationActor
+import org.liamjd.game.v3.actors.TextureActor
+import org.liamjd.game.v3.actors.animation
+import org.liamjd.game.v3.actors.onHover
 import com.badlogic.gdx.utils.Array as GdxArray
 
 
@@ -71,8 +72,8 @@ class InnerPlanets(game: Version3, stage: Stage, skin: Skin) : AbstractGameplayS
 				println("Blue planet clicked")
 			}
 		})
-		val planet1Label = Label("Small planet",skin)
-		val planet2Label = Label("Large planet",skin)
+		val planet1Label = Label("Small planet", skin)
+		val planet2Label = Label("Large planet", skin)
 //		planet1Label.setPosition(animatedPlanet.x,stage.height - 400f)
 //		planet2Label.setPosition(animatedPlanet2.x,stage.height - 400f)
 
@@ -86,7 +87,7 @@ class InnerPlanets(game: Version3, stage: Stage, skin: Skin) : AbstractGameplayS
 		// horizontal centre line
 		stage.addActor(object : Actor() {
 			override fun draw(batch: Batch?, parentAlpha: Float) {
-				if(batch != null) {
+				if (batch != null) {
 					batch.end()
 					shape.setProjectionMatrix(stage.camera.combined)
 					shape.begin(ShapeType.Line)
@@ -100,34 +101,31 @@ class InnerPlanets(game: Version3, stage: Stage, skin: Skin) : AbstractGameplayS
 
 		stage.actors {
 
-			animation(name = "Planet 1", animation =  Animation<TextureRegion>(0.5f, redPlanetFrames) ,xScale = 0.2f, yScale = 0.2f) {
+			val planetWindow = window("Planet window").apply {
+				isModal = true
+				isMovable = true
+				isVisible = false
+			}
+			animation(name = "Planet 1", animation = Animation<TextureRegion>(0.5f, redPlanetFrames), xScale = 0.2f, yScale = 0.2f) {
 				setPosition(stage.width - 600f, ((stage.height / 2) - (redPlanetHeight * this.yScale) / 2))
+
+				onHover(startFunction = { zoom() }, endFunction = { resetZoom() }) {
+					println("zoom()  hover")
+				}
 				onClick {
-					println("Clicked on ${this.name}")
-				}
-				onEnter {
-					zoom()
-				}
-				onExit {
-					resetZoom()
+					println("onClick planet 1")
 				}
 			}
 
-			animation(name = "Planet 2", animation =  Animation<TextureRegion>(0.5f, redPlanetFrames) ,xScale = 0.4f, yScale = 0.4f) {
+			animation(name = "Planet 2", animation = Animation<TextureRegion>(0.5f, redPlanetFrames), xScale = 0.4f, yScale = 0.4f) {
 				setPosition(stage.width - 300f, ((stage.height / 2) - (redPlanetHeight * this.yScale) / 2))
-				onClickEvent { event, actor ->
-					println("onClick x,y: $x,$y - stageX,stageY: ${event.stageX},${event.stageY}")
+
+				onHover(startFunction = { zoom() }, endFunction = { resetZoom() }) {
+					println("zoom()  hover")
 				}
-//				onClick {
-//					println("Clicked on ${this.name}")
-//				}
-				onEnter {
-					println("onEnter x,y $x,$y")
-					zoom()
-				}
-				onTouchUp { println("onTouchUp x,y $x,$y") }
-				onExit {
-					resetZoom()
+
+				onClick {
+					println("onClick planet 2")
 				}
 			}
 
@@ -185,6 +183,8 @@ class InnerPlanets(game: Version3, stage: Stage, skin: Skin) : AbstractGameplayS
 		skin.dispose()
 	}
 }
+
+
 
 
 
