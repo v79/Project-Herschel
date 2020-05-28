@@ -3,7 +3,6 @@ package org.liamjd.game.v2.desktop
 import com.badlogic.gdx.Files.FileType
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration
-import org.liamjd.game.v2.Version2
 import org.liamjd.game.v3.Version3
 
 object DesktopLauncher {
@@ -19,8 +18,8 @@ object DesktopLauncher {
 	private fun getDefaultConfiguration(): LwjglApplicationConfiguration? {
 		val configuration = LwjglApplicationConfiguration()
 		configuration.title = "Herschel"
-		configuration.width = 640
-		configuration.height = 480
+		configuration.width = 1024
+		configuration.height = 768
 		for (size in intArrayOf(128, 64, 32, 16)) {
 			configuration.addIcon("libgdx$size.png", FileType.Internal)
 		}

@@ -2,14 +2,13 @@ package org.liamjd.game.v3
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.GL20
-import com.badlogic.gdx.graphics.g2d.Animation
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import ktx.app.KtxScreen
 import ktx.scene2d.KTableWidget
 
 abstract class AbstractGameplayScreen(val game: Version3,
-									  val stage: Stage, val skin: Skin) : KtxScreen {
+									  val stage: Stage, val screenSkin: Skin) : KtxScreen {
 
 	override fun render(delta: Float) {
 		Gdx.gl.glClearColor(0f, 0f, 0f, 1f)

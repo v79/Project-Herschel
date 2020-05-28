@@ -6,19 +6,11 @@ import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.scenes.scene2d.Actor
-import com.badlogic.gdx.scenes.scene2d.actions.Actions.moveBy
 import ktx.scene2d.RootWidget
 import ktx.scene2d.Scene2dDsl
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
-
-fun zoom() {
-//	println("\tZoom called: hover: $hover, clicked: $clicked")
-//	scaleBy(0.05f)
-	moveBy(-10f, -10f)
-}
-
 
 class AnimationActor(name: String, val animation: Animation<TextureRegion>, val xScale: Float, val yScale: Float) : Actor() {
 
@@ -31,20 +23,17 @@ class AnimationActor(name: String, val animation: Animation<TextureRegion>, val 
 	val haloRenderer = ShapeRenderer()
 
 	init {
-		println("Initialising animation $name")
 		setName(name)
 		setScale(xScale,yScale)
 		setBounds(this.x,this.y,frameWidth,frameHeight)
 	}
 
 	fun zoom() {
-		println("\tZoom called: hover: $hover, clicked: $clicked")
 		scaleBy(0.05f)
 		moveBy(-10f, -10f)
 	}
 
 	fun resetZoom() {
-		println("\tResetting zoom: hover: $hover, clicked: $clicked")
 		setScale(xScale, yScale)
 		moveBy(10f, 10f)
 	}

@@ -6,13 +6,15 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.utils.Align
-import ktx.actors.onChange
 import ktx.actors.onClick
 import ktx.actors.onClickEvent
 import ktx.actors.plusAssign
 import ktx.app.KtxScreen
 import ktx.scene2d.*
 import org.liamjd.game.v3.actors.TextureActor
+import org.liamjd.game.v3.actors.onEnter
+import org.liamjd.game.v3.sceneExtensions.changeSkin
+import org.liamjd.game.v3.sceneExtensions.onExit
 
 class MainMenu(private val game: Version3,
 			   private val stage: Stage, private val skin: Skin) : KtxScreen {
@@ -38,6 +40,12 @@ class MainMenu(private val game: Version3,
 				setFillParent(true)
 				label("New Game") {
 					// tooltips are causing problems with my background
+					onEnter {
+						changeSkin("mainMenuHover",this@MainMenu.skin)
+					}
+					onExit {
+						changeSkin(this@MainMenu.skin)
+					}
 					textTooltip("Start a new game of Herschel", skin = this@MainMenu.skin)
 					onClick {
 						stage.clear()
@@ -45,9 +53,29 @@ class MainMenu(private val game: Version3,
 					}
 				}.cell(row = true)
 
-				label("Load Game").cell(row = true)
-				label("Settings").cell(row = true)
+				label("Load Game") {
+					onEnter {
+						changeSkin("mainMenuHover",this@MainMenu.skin)
+					}
+					onExit {
+						changeSkin(this@MainMenu.skin)
+					}
+				}.cell(row = true)
+				label("Settings") {
+					onEnter {
+						changeSkin("mainMenuHover",this@MainMenu.skin)
+					}
+					onExit {
+						changeSkin(this@MainMenu.skin)
+					}
+				}.cell(row = true)
 				label("Quit") {
+					onEnter {
+						changeSkin("mainMenuHover",this@MainMenu.skin)
+					}
+					onExit {
+						changeSkin(this@MainMenu.skin)
+					}
 					onClickEvent { inputEvent, actor ->
 						println("$actor clicked by $inputEvent!")
 						Gdx.app.exit()
@@ -75,4 +103,5 @@ class MainMenu(private val game: Version3,
 		skin.dispose()
 	}
 }
+
 
