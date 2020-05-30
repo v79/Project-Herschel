@@ -1,0 +1,109 @@
+{
+    "players": [
+        {
+            "id": 1,
+            "firstName": "Joseph",
+            "familyName": "Joseph Obuya",
+            "gender": "MALE",
+            "age": 26
+        },
+        {
+            "id": 2,
+            "firstName": "Chima",
+            "familyName": "Kwesi Obama",
+            "gender": "MALE",
+            "age": 27
+        },
+        {
+            "id": 3,
+            "firstName": "Marjani",
+            "familyName": "Onyekachukwu Maina",
+            "gender": "FEMALE",
+            "age": 30
+        },
+        {
+            "id": 4,
+            "firstName": "Amahle",
+            "familyName": "Inyene Okafor",
+            "gender": "FEMALE",
+            "age": 31
+        },
+        {
+            "id": 5,
+            "firstName": "Eugène",
+            "familyName": "Caron",
+            "gender": "MALE",
+            "age": 24
+        },
+        {
+            "id": 6,
+            "firstName": "Rachel",
+            "familyName": "Soraya Masson",
+            "gender": "FEMALE",
+            "age": 24
+        },
+        {
+            "id": 7,
+            "firstName": "Issac",
+            "familyName": "Dominick Rattray",
+            "gender": "MALE",
+            "age": 45
+        },
+        {
+            "id": 8,
+            "firstName": "Meredith",
+            "familyName": "McFarland",
+            "gender": "FEMALE",
+            "age": 32
+        },
+        {
+            "id": 9,
+            "firstName": "Erika",
+            "familyName": " Franklyn",
+            "gender": "FEMALE",
+            "age": 29
+        },
+        {
+            "id": 10,
+            "firstName": "Peter",
+            "familyName": "Hendry",
+            "gender": "MALE",
+            "age": 27
+        },
+        {
+            "id": 11,
+            "firstName": "Youssef",
+            "familyName": "Alfarsi",
+            "gender": "MALE",
+            "age": 26
+        },
+        {
+            "id": 12,
+            "firstName": "Karam",
+            "familyName": "Ajam",
+            "gender": "FEMALE",
+            "age": 40
+        },
+        {
+            "id": 13,
+            "firstName": "Zhong",
+            "familyName": "Lin",
+            "gender": "FEMALE",
+            "age": 32
+        },
+        {
+            "id": 14,
+            "firstName": "Bai",
+            "familyName": "Yang",
+            "gender": "MALE",
+            "age": 33
+        },
+        {
+            "id": 15,
+            "firstName": "Jia",
+            "familyName": "Chen",
+            "gender": "MALE",
+            "age": 35
+        }
+    ]
+}

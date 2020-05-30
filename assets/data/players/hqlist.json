@@ -1,0 +1,52 @@
+{
+    "hqs": [
+        {
+            "name": "Geneva",
+            "country": "Switzerland",
+            "baseScience": 1.2,
+            "flavourText": "Home of the famous CERN particle accelerator, you will benefit from an increased basic science rate  of 1.2, as well as a boost to physics research. Material extraction, however, will be only 0.8 of nominal."
+        },
+        {
+            "name": "Nairobi",
+            "country": "Kenya",
+            "baseScience": 0.9,
+            "flavourText": "sci 0.9, psych +, material +, pys -"
+        },
+        {
+            "name": "Beijing",
+            "country": "China",
+            "baseScience": 1.0,
+            "flavourText": "bio +"
+        },
+        {
+            "name": "Dubai",
+            "country": "UAE",
+            "baseScience": 0.8,
+            "flavourText": "sci 0.8, chem ++"
+        },
+        {
+            "name": "Houston",
+            "country": "USA",
+            "baseScience": 1.2,
+            "flavourText": "sci 1.2, eng +, bio --"
+        },
+        {
+            "name": "Kyoto",
+            "country": "Japan",
+            "baseScience": 1.4,
+            "flavourText": "sci 1.4, material --, pys -"
+        },
+        {
+            "name": "Bangalore",
+            "country": "India",
+            "baseScience": 1.0,
+            "flavourText": "mat ++"
+        },
+        {
+            "name": "São Paulo",
+            "country": "Brazil",
+            "baseScience": 0.8,
+            "flavourText": "sci 0.8, mat +"
+        }
+    ]
+}
