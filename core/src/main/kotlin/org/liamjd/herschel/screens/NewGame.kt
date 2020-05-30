@@ -31,6 +31,7 @@ class NewGame(game: Game, stage: Stage, skin: Skin, val setup: GameSetup) : Abst
 		val hqs = setup.loadHQList()
 		val playerButtonGroup = ButtonGroup<CheckBox>()
 		val hqButtonGroup = ButtonGroup<CheckBox>()
+		var randomNames: Pair<String,String> = setup.getRandomName()
 
 		stage += title
 		stage.actors {
@@ -43,7 +44,71 @@ class NewGame(game: Game, stage: Stage, skin: Skin, val setup: GameSetup) : Abst
 				}
 			}
 
+
+			var countryDetails: Label = Label("",screenSkin,"new-game-player-name").apply {
+				width = 40f
+				setWrap(true)
+				isVisible = false
+			}
+
 			table {
+//				debug()
+				defaults().align(Align.left).padLeft(10f).padRight(10f).padBottom(10f)
+				setFillParent(true)
+				label("Where was your company founded?") { cell ->
+					cell.colspan(4)
+				}
+				row()
+				val hqTable = table {
+					hqs.forEachIndexed { index, hq ->
+						checkBox("${hq.name}: ${hq.country}", style="new-game-player-name") { cell ->
+							cell.colspan(2)
+							cell.align(Align.left)
+							hqButtonGroup.add(this)
+							cell.expandY().left().top()
+							onClick {
+								with(countryDetails) {
+									setText(hq.flavourText)
+									width = 100f
+									isVisible = true
+								}
+							}
+						}
+						if((index +1) % 2 == 0) row()
+					}
+				}
+				countryDetails = label("","new-game-player-name") { cell ->
+					cell.align(Align.topLeft)
+					cell.colspan(3)
+					cell.fill()
+					setWrap(true)
+					isVisible = false
+				}
+
+				row()
+				label("What do your friends call you?") { cell ->
+					cell.colspan(4)
+				}
+				row()
+				var rFirstName = label("${randomNames.first} '") {cell ->
+					cell.align(Align.right)
+				}
+				val nicknameField = textField(style="new-game-player-name") { cell ->
+					cell.padRight(5f)
+				}
+				var rLastName = label("' ${randomNames.second}") { cell ->
+					cell.expandX()
+				}
+				button(style = "dice") {
+					onClick {
+						randomNames = setup.getRandomName()
+						rFirstName.setText(randomNames.first)
+						rLastName.setText(randomNames.second)
+					}
+					textTooltip("Randomize") }
+			}
+
+			/*table {
 				defaults().padBottom(5f).padLeft(5f).align(Align.left)
 				setFillParent(true)
 				label("Choose your first leader")
@@ -90,7 +155,7 @@ class NewGame(game: Game, stage: Stage, skin: Skin, val setup: GameSetup) : Abst
 					}
 				}
 
-			}
+			}*/
 		}
 	}
 }

@@ -27,6 +27,6 @@ enum class Gender(val salutation: String, val pronoun: String) {
 }
 
 @Serializable
-class HQ(val name: String, val country: String)
+class HQ(val name: String, val country: String, val baseScience: Float, var flavourText: String = "")
 @Serializable
 class HQList(val hqs: List<HQ>)

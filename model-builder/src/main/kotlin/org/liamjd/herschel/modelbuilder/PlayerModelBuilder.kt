@@ -24,11 +24,14 @@ object PlayerModelBuilder {
 
 	fun buildHQList() {
 		val hqList = mutableListOf<HQ>()
-		hqList.add(HQ("Geneva","Switzerland"))
-		hqList.add(HQ("Nairobi","Kenya"))
-		hqList.add(HQ("Beijing","China"))
-		hqList.add(HQ("Dubai","UAE"))
-		hqList.add(HQ("Houston","USA"))
+		hqList.add(HQ("Geneva","Switzerland",1.2f,"Home of the famous CERN particle accelerator, you will benefit from an increased basic science rate of 1.2, as well as a boost to physics research. Material extraction, however, will be only 0.8 of nominal."))
+		hqList.add(HQ("Nairobi","Kenya",0.9f, "sci 0.9, psych +, material +, pys -"))
+		hqList.add(HQ("Beijing","China",1f, "bio +"))
+		hqList.add(HQ("Dubai","UAE",0.8f, "sci 0.8, chem ++"))
+		hqList.add(HQ("Houston","USA",1.2f, "sci 1.2, eng +, bio --"))
+		hqList.add(HQ("Kyoto","Japan",1.4f,"sci 1.4, material --, pys -"))
+		hqList.add(HQ("Bangalore","India",1f, "mat ++"))
+		hqList.add(HQ("São Paulo","Brazil",0.8f, "sci 0.8, mat +"))
 
 		val hqs = HQList(hqList)
 		val hqListJson = json.stringify(HQList.serializer(),hqs)

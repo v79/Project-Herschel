@@ -34,7 +34,7 @@ chemistry
   index: -1
 cursor
   rotate: false
-  xy: 248, 281
+  xy: 270, 303
   size: 4, 7
   split: 1, 1, 2, 2
   pad: 0, 0, 0, 0
@@ -64,7 +64,7 @@ font-title-export
   index: -1
 horizontal-split-pane
   rotate: false
-  xy: 204, 233
+  xy: 248, 277
   size: 5, 11
   split: 2, 2, 2, 2
   orig: 5, 11
@@ -104,14 +104,14 @@ progress-bar
   index: -1
 progress-bar-fill
   rotate: false
-  xy: 270, 317
+  xy: 314, 320
   size: 1, 34
   orig: 1, 34
   offset: 0, 0
   index: -1
 progress-bar-fill-vert
   rotate: false
-  xy: 270, 353
+  xy: 515, 927
   size: 34, 1
   orig: 34, 1
   offset: 0, 0
@@ -139,6 +139,15 @@ round-gray
   orig: 42, 42
   offset: 0, 0
   index: -1
+round-gray-dice
+  rotate: false
+  xy: 270, 312
+  size: 42, 42
+  split: 13, 13, 13, 13
+  pad: 9, 9, 5, 5
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
 round-white
   rotate: false
   xy: 74, 109
@@ -150,7 +159,7 @@ round-white
   index: -1
 round-white-small
   rotate: false
-  xy: 568, 946
+  xy: 659, 1077
   size: 24, 24
   split: 10, 10, 10, 10
   pad: 10, 10, 2, 2
@@ -175,7 +184,7 @@ selectbox
   index: -1
 selection
   rotate: false
-  xy: 118, 142
+  xy: 204, 235
   size: 9, 9
   split: 2, 1, 2, 1
   pad: 4, 3, 4, 3
@@ -184,7 +193,7 @@ selection
   index: -1
 slider-horizontal
   rotate: false
-  xy: 659, 1091
+  xy: 712, 1105
   size: 20, 10
   split: 4, 4, 4, 4
   pad: 1, 2, 2, 2
@@ -193,14 +202,14 @@ slider-horizontal
   index: -1
 slider-knob
   rotate: false
-  xy: 515, 904
+  xy: 568, 946
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: -1
 slider-vertical
   rotate: false
-  xy: 74, 87
+  xy: 118, 131
   size: 9, 20
   split: 4, 3, 3, 3
   pad: 3, 3, 2, 2
@@ -231,7 +240,7 @@ touchpad-knob
   index: -1
 vertical-split-pane
   rotate: false
-  xy: 712, 1110
+  xy: 74, 102
   size: 11, 5
   split: 2, 2, 1, 1
   pad: 1, 1, 1, 1
@@ -240,7 +249,7 @@ vertical-split-pane
   index: -1
 white
   rotate: false
-  xy: 306, 353
+  xy: 515, 924
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
