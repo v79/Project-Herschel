@@ -1,0 +1,9 @@
+## Project Herschel
+
+Project Herschel is an attempt to create a kind of 3X game with a strong focus on research. One of my frustrations of most 4X games (_Civilization_, _Masters of Orion_, et al) is the way research is handled. A player chooses a research item ("The Wheel", or "Celestial Navigation") as if all civilizations had a roadmap laid out in front of them, that all technologies were known about in advance, and merely need implementing. Science doesn't work that way, and there is no roadmap for us all.
+
+So in Project Herschel, the player will not be able to choose which technologies or scientific insights to research next. Instead, they will set focuses, such as "biology" or "physics", and research in multiple technologies will run in parallel. In each game, technologies will have a randomised base cost (1000 science) split across a range of scientific fields. For instance, "Suspended Animation" may cost 10,000 science, in a ratio of 60% biology, 30% engineering, and 10% chemistry.
+
+Indeed, the science tech tree will not be visible to the player in the traditional sense. As technologies become near to being researched, they will be revealed as "promising leads". In the example above, "Suspended Animation" could be revealed when 70% of its base cost had been researched, and the player may then focus research in particular fields to bring it to completion. Suppose all the engineering and chemical research had been completed; the player could then shift focus to the biological sciences to bring it over the line.
+
+The intention is to have a broad and deep tech tree, with multiple valid paths. One playthrough may focus on biology, and reveal suspended animation, human cloning, brain-computer interfaces. The next game may lead the player down a path of pure physics, to reveal quantum computing, inertial dampening, wormhole manipulation, and so on.
