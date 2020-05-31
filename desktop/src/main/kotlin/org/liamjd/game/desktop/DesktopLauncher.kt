@@ -3,7 +3,7 @@ package org.liamjd.game.desktop
 import com.badlogic.gdx.Files.FileType
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration
-import org.liamjd.herschel.Game
+import org.liamjd.herschel.Herschel
 
 object DesktopLauncher {
 	@JvmStatic
@@ -12,7 +12,7 @@ object DesktopLauncher {
 	}
 
 	private fun createApplication(): LwjglApplication? {
-		return LwjglApplication(Game(), getDefaultConfiguration())
+		return LwjglApplication(Herschel(), getDefaultConfiguration())
 	}
 
 	private fun getDefaultConfiguration(): LwjglApplicationConfiguration? {

@@ -1,16 +1,22 @@
 {
-com.badlogic.gdx.graphics.g2d.BitmapFont: {
+BitmapFont: {
 	bahnschrift: {
 		file: bahnschrift.fnt
 	}
 	font: {
 		file: font-export.fnt
 	}
+	segoe-ui-18: {
+		file: segoe-ui-18.fnt
+	}
+	segoe-ui-22: {
+		file: segoe-ui-22.fnt
+	}
 	title: {
 		file: font-title-export.fnt
 	}
 }
-com.badlogic.gdx.graphics.Color: {
+Color: {
 	black: {
 		r: 0
 		g: 0
@@ -36,7 +42,7 @@ com.badlogic.gdx.graphics.Color: {
 		a: 1
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
+TintedDrawable: {
 	round-dark-gray: {
 		name: round-white
 		color: {
@@ -83,7 +89,7 @@ com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
 		}
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
+ButtonStyle: {
 	default: {
 		up: round-gray
 		down: round-dark-gray
@@ -96,16 +102,29 @@ com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
 		checked: round-dark-gray
 		checkedOver: round-light-gray
 	}
+	dice: {
+		up: round-gray-dice
+		down: round-dark-gray
+		over: round-gray-dice
+	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle: {
+CheckBoxStyle: {
 	default: {
 		checkboxOn: checkbox-on
 		checkboxOff: checkbox
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 	}
+	new-game-player-name: {
+		parent: default
+		checkboxOn: round-gray-small
+		checkboxOff: round-white-small
+		font: segoe-ui-18
+		fontColor: white
+		checkedFontColor: white
+	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.ImageButton$ImageButtonStyle: {
+ImageButtonStyle: {
 	default: {
 		up: round-gray
 		down: round-dark-gray
@@ -131,15 +150,15 @@ com.badlogic.gdx.scenes.scene2d.ui.ImageButton$ImageButtonStyle: {
 		pressedOffsetY: -1
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton$ImageTextButtonStyle: {
+ImageTextButtonStyle: {
 	default: {
-		font: font
+		font: segoe-ui-18
 		up: round-gray
 		down: round-dark-gray
 		over: round-light-gray
 	}
 	toggle: {
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 		up: round-gray
 		down: round-dark-gray
@@ -148,28 +167,32 @@ com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton$ImageTextButtonStyle: {
 		checkedOver: round-light-gray
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+LabelStyle: {
 	default: {
-		font: font
+		font: segoe-ui-22
 		fontColor: white
 	}
 	title: {
 		font: bahnschrift
 	}
 	mainMenuHover: {
-		font: font
+		font: segoe-ui-22
 		fontColor: palered
 	}
+	new-game-player-name: {
+		font: segoe-ui-18
+		fontColor: white
+	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle: {
+ListStyle: {
 	default: {
-		font: font
+		font: segoe-ui-18
 		fontColorSelected: white
 		fontColorUnselected: black
 		selection: selection
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle: {
+ProgressBarStyle: {
 	default-horizontal: {
 		background: progress-bar
 		knobBefore: progress-bar-fill
@@ -179,7 +202,7 @@ com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle: {
 		knobBefore: progress-bar-fill-vert
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle: {
+ScrollPaneStyle: {
 	default: {
 		background: list
 		hScroll: round-black-small
@@ -188,15 +211,15 @@ com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle: {
 		vScrollKnob: round-gray-small
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.SelectBox$SelectBoxStyle: {
+SelectBoxStyle: {
 	default: {
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 		scrollStyle: default
 		listStyle: default
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.Slider$SliderStyle: {
+SliderStyle: {
 	default-horizontal: {
 		background: slider-horizontal
 		knob: slider-knob
@@ -206,7 +229,7 @@ com.badlogic.gdx.scenes.scene2d.ui.Slider$SliderStyle: {
 		knob: slider-knob
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.SplitPane$SplitPaneStyle: {
+SplitPaneStyle: {
 	default-horizontal: {
 		handle: horizontal-split-pane
 	}
@@ -214,16 +237,17 @@ com.badlogic.gdx.scenes.scene2d.ui.SplitPane$SplitPaneStyle: {
 		handle: vertical-split-pane
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
+TextButtonStyle: {
 	default: {
-		font: font
+		font: segoe-ui-18
 		fontColor: black
+		disabledFontColor: palered
 		up: round-gray
 		down: round-dark-gray
 		over: round-light-gray
 	}
 	toggle: {
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 		up: round-gray
 		down: round-dark-gray
@@ -232,48 +256,53 @@ com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
 		checkedOver: round-light-gray
 	}
 	special: {
-		font: title
+		font: segoe-ui-22
 		fontColor: black
 		up: round-gray
 		down: round-dark-gray
 		over: round-light-gray
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle: {
+TextFieldStyle: {
 	default: {
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 		background: textfield
 		cursor: cursor
 		selection: gray
 	}
+	new-game-player-name: {
+		parent: default
+		font: segoe-ui-18
+		fontColor: black
+	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle: {
+TextTooltipStyle: {
 	default: {
 		label: default
 		background: round-white
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.Touchpad$TouchpadStyle: {
+TouchpadStyle: {
 	default: {
 		background: touchpad
 		knob: touchpad-knob
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.Tree$TreeStyle: {
+TreeStyle: {
 	default: {
 		plus: plus
 		minus: minus
 	}
 }
-com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
+WindowStyle: {
 	default: {
 		background: window
-		titleFont: bahnschrift
+		titleFont: segoe-ui-22
 	}
 	dialog: {
 		background: window
-		titleFont: font
+		titleFont: segoe-ui-18
 		titleFontColor: black
 		stageBackground: white
 	}

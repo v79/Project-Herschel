@@ -15,9 +15,9 @@ import org.liamjd.herschel.actors.TextureActor
 import org.liamjd.herschel.extensions.changeSkin
 import org.liamjd.herschel.extensions.onEnter
 import org.liamjd.herschel.extensions.onExit
-import org.liamjd.herschel.screens.InnerPlanets
+import org.liamjd.herschel.screens.NewGame
 
-class MainMenu(private val game: Game,
+class MainMenu(private val herschel: Herschel,
 			   private val stage: Stage, private val skin: Skin) : KtxScreen {
 
 	override fun show() {
@@ -50,7 +50,7 @@ class MainMenu(private val game: Game,
 					textTooltip("Start a new game of Herschel", skin = this@MainMenu.skin)
 					onClick {
 						stage.clear()
-						game.setScreen<InnerPlanets>()
+						herschel.setScreen<NewGame>()
 					}
 				}.cell(row = true)
 				label("Load Game") {
