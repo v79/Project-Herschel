@@ -238,6 +238,7 @@ TextButtonStyle: {
 	default: {
 		font: font
 		fontColor: black
+		disabledFontColor: palered
 		up: round-gray
 		down: round-dark-gray
 		over: round-light-gray

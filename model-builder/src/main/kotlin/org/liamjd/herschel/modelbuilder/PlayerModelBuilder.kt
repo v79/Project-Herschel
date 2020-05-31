@@ -31,7 +31,7 @@ object PlayerModelBuilder {
 		hqList.add(HQ("Houston","USA",1.2f, "sci 1.2, eng +, bio --"))
 		hqList.add(HQ("Kyoto","Japan",1.4f,"sci 1.4, material --, pys -"))
 		hqList.add(HQ("Bangalore","India",1f, "mat ++"))
-		hqList.add(HQ("São Paulo","Brazil",0.8f, "sci 0.8, mat +"))
+		hqList.add(HQ("São Paulo","Brazil",0.8f, "sci 0.8, mat ++"))
 
 		val hqs = HQList(hqList)
 		val hqListJson = json.stringify(HQList.serializer(),hqs)

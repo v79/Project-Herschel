@@ -3,20 +3,21 @@ package org.liamjd.herschel.screens
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.scenes.scene2d.Stage
-import com.badlogic.gdx.scenes.scene2d.ui.ButtonGroup
-import com.badlogic.gdx.scenes.scene2d.ui.CheckBox
-import com.badlogic.gdx.scenes.scene2d.ui.Label
-import com.badlogic.gdx.scenes.scene2d.ui.Skin
+import com.badlogic.gdx.scenes.scene2d.ui.*
 import com.badlogic.gdx.utils.Align
+import com.badlogic.gdx.utils.StringBuilder
+import ktx.actors.onChange
 import ktx.actors.onClick
 import ktx.actors.plusAssign
 import ktx.scene2d.*
-import org.liamjd.herschel.Game
+import org.liamjd.herschel.Herschel
 import org.liamjd.herschel.MainMenu
 import org.liamjd.herschel.actors.TextureActor
+import org.liamjd.herschel.extensions.radioButton
+import org.liamjd.herschel.models.*
 import org.liamjd.herschel.services.newgame.GameSetup
 
-class NewGame(game: Game, stage: Stage, skin: Skin, val setup: GameSetup) : AbstractGameplayScreen(game, stage, skin) {
+class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: GameSetup) : AbstractGameplayScreen(herschel, stage, skin) {
 
 	override fun show() {
 		Scene2DSkin.defaultSkin = screenSkin
@@ -27,11 +28,14 @@ class NewGame(game: Game, stage: Stage, skin: Skin, val setup: GameSetup) : Abst
 		val title = Label("New Game", screenSkin, "title")
 		title.setPosition(stage.width / 2f, stage.height - 20f, Align.center)
 
-		val players = setup.loadPlayerNames()
+		// fetch the list of possible HQs from the setup service
 		val hqs = setup.loadHQList()
-		val playerButtonGroup = ButtonGroup<CheckBox>()
+		// button groups are logical groupings, required to create a radio button set
 		val hqButtonGroup = ButtonGroup<CheckBox>()
+
+		// if a stage element needs to be referred to before it appears on the stage, create a dummy object first
 		var randomNames: Pair<String,String> = setup.getRandomName()
+		var startButton: TextButton = TextButton("Start game",screenSkin)
 
 		stage += title
 		stage.actors {
@@ -40,10 +44,9 @@ class NewGame(game: Game, stage: Stage, skin: Skin, val setup: GameSetup) : Abst
 				setPosition(10f, (stage.height - 48f))
 				onClick {
 					hide()
-					game.setScreen<MainMenu>()
+					herschel.setScreen<MainMenu>()
 				}
 			}
-
 
 			var countryDetails: Label = Label("",screenSkin,"new-game-player-name").apply {
 				width = 40f
@@ -58,10 +61,11 @@ class NewGame(game: Game, stage: Stage, skin: Skin, val setup: GameSetup) : Abst
 				label("Where was your company founded?") { cell ->
 					cell.colspan(4)
 				}
-				row()
+				row().center()
 				val hqTable = table {
 					hqs.forEachIndexed { index, hq ->
-						checkBox("${hq.name}: ${hq.country}", style="new-game-player-name") { cell ->
+						radioButton(hq,"${hq.name}: ${hq.country}", style="new-game-player-name") { cell ->
+							userObject = hq
 							cell.colspan(2)
 							cell.align(Align.left)
 							hqButtonGroup.add(this)
@@ -90,13 +94,16 @@ class NewGame(game: Game, stage: Stage, skin: Skin, val setup: GameSetup) : Abst
 					cell.colspan(4)
 				}
 				row()
-				var rFirstName = label("${randomNames.first} '") {cell ->
+				var rFirstName = label("${randomNames.first}") {cell ->
 					cell.align(Align.right)
 				}
 				val nicknameField = textField(style="new-game-player-name") { cell ->
 					cell.padRight(5f)
+					onChange {
+						startButton.isDisabled = this.text.isEmpty()
+					}
 				}
-				var rLastName = label("' ${randomNames.second}") { cell ->
+				var rLastName = label("${randomNames.second}") { cell ->
 					cell.expandX()
 				}
 				button(style = "dice") {
@@ -105,57 +112,39 @@ class NewGame(game: Game, stage: Stage, skin: Skin, val setup: GameSetup) : Abst
 						rFirstName.setText(randomNames.first)
 						rLastName.setText(randomNames.second)
 					}
-					textTooltip("Randomize") }
-			}
-
-			/*table {
-				defaults().padBottom(5f).padLeft(5f).align(Align.left)
-				setFillParent(true)
-				label("Choose your first leader")
-				label("Choose the location of your HQ")
-				row()
-
-				val playerNameTable = table {
-					padRight(5f)
-					align(Align.left)
-					players.forEach { p ->
-						val box = checkBox("${p.firstName} ${p.familyName}", style = "new-game-player-name") { cell ->
-							playerButtonGroup.add(this)
-							align(Align.left)
-							cell.expandX().left()
-							cell.expandY().top()
-						}
-						label(p.age.toString(), style = "new-game-player-name").cell(padRight = 5f)
-						label(p.gender.toString(), style = "new-game-player-name").cell(padLeft = 5f).setAlignment(Align.right)
-						row()
-					}
-				}
-
-				val hqTable = table {
-					debug()
-					align(Align.topLeft).top()
-					hqs.forEach { hq ->
-						checkBox("${hq.name}: ${hq.country}", style="new-game-player-name") { cell ->
-							hqButtonGroup.add(this)
-							cell.expandY().left().top()
-						}
-						row()
-					}
+					textTooltip("Randomize")
 				}
 
 				row()
-
-				label("Player nickname", style = "new-game-player-name")
-				val nicknameField = textField(style = "new-game-player-name") { }
-				textButton("Begin") { cell ->
+				startButton = textButton("Start game") { cell ->
+					isDisabled = nicknameField.text.isEmpty()
+					cell.colspan(4)
+					cell.align(Align.right)
 					onClick {
-						println("Nickname entered: " + nicknameField.text)
-						stage.clear()
-						game.setScreen<InnerPlanets>()
+						println("Beginning game")
+						val selectedHq = hqButtonGroup.allChecked.first().userObject as HQ
+						println("SelectedHQ: ${selectedHq}")
+						val gameState = initializeGameState(rFirstName.text,rLastName.text,nicknameField.text, selectedHq)
 					}
 				}
-
-			}*/
+			}
 		}
+	}
+
+	private fun initializeGameState(firstName: StringBuilder, lastName: StringBuilder, nickName: String, hq: HQ): GameState {
+		val gameState = GameState(Player(1,firstName.toString(),lastName.toString(),nickName.toString(),Gender.MALE,26))
+		gameState.year = 2050
+		gameState.era = Era.MARS
+		return gameState
+	}
+
+	override fun render(delta: Float) {
+		stage.act(delta)
+		super.render(delta)
+	}
+
+	override fun dispose() {
+		stage.dispose()
+		screenSkin.dispose()
 	}
 }

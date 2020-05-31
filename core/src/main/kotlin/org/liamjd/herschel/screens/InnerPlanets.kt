@@ -17,7 +17,7 @@ import com.badlogic.gdx.utils.Align
 import ktx.actors.onClick
 import ktx.actors.plusAssign
 import ktx.scene2d.*
-import org.liamjd.herschel.Game
+import org.liamjd.herschel.Herschel
 import org.liamjd.herschel.MainMenu
 import org.liamjd.herschel.actors.AnimationActor
 import org.liamjd.herschel.extensions.animation
@@ -27,7 +27,7 @@ import com.badlogic.gdx.utils.Array as GdxArray
 
 data class Planet(val name: String, val x: Float, val scale: Float, val color: Color?)
 
-class InnerPlanets(game: Game, stage: Stage, skin: Skin) : AbstractGameplayScreen(game, stage, skin) {
+class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGameplayScreen(herschel, stage, skin) {
 
 	var year = 2050
 	lateinit var yearLabel: Label
@@ -84,7 +84,7 @@ class InnerPlanets(game: Game, stage: Stage, skin: Skin) : AbstractGameplayScree
 		})
 
 		val planetList = mutableListOf<Planet>()
-		val planetCount = 6
+		val planetCount = 4
 		val spacing = stage.width / planetCount
 		val r = Random(System.currentTimeMillis())
 
@@ -138,7 +138,7 @@ class InnerPlanets(game: Game, stage: Stage, skin: Skin) : AbstractGameplayScree
 					cell.align(Align.left)
 					onClick {
 						hide()
-						game.setScreen<MainMenu>()
+						herschel.setScreen<MainMenu>()
 					}
 				}
 				horizontalGroup { cell ->

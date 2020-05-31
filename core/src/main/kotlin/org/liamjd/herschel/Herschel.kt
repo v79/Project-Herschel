@@ -14,7 +14,7 @@ import org.liamjd.herschel.screens.InnerPlanets
 import org.liamjd.herschel.screens.NewGame
 import org.liamjd.herschel.services.newgame.GameSetup
 
-class Game : KtxGame<Screen>() {
+class Herschel : KtxGame<Screen>() {
 
 	private val context = Context()
 	private val WIDTH = 1024f
@@ -25,7 +25,7 @@ class Game : KtxGame<Screen>() {
 
 		// set up dependency injection
 		context.register {
-			bindSingleton(this@Game)
+			bindSingleton(this@Herschel)
 			bindSingleton(SpriteBatch())
 			bindSingleton(Stage((FitViewport(WIDTH, HEIGHT))))
 			bindSingleton(skin)

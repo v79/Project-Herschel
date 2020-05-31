@@ -6,9 +6,9 @@ import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import ktx.app.KtxScreen
 import ktx.scene2d.KTableWidget
-import org.liamjd.herschel.Game
+import org.liamjd.herschel.Herschel
 
-abstract class AbstractGameplayScreen(val game: Game,
+abstract class AbstractGameplayScreen(val herschel: Herschel,
 									  val stage: Stage, val screenSkin: Skin) : KtxScreen {
 
 	override fun render(delta: Float) {

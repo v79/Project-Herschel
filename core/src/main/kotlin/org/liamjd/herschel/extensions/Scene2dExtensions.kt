@@ -7,8 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
-import ktx.scene2d.RootWidget
-import ktx.scene2d.Scene2dDsl
+import ktx.scene2d.*
 import org.liamjd.herschel.actors.AnimationActor
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.InvocationKind
@@ -102,3 +101,24 @@ inline fun Label.changeSkin(styleName: String, skin: Skin) {
 inline fun Label.changeSkin(skin: Skin) {
 	changeSkin("default",skin)
 }
+
+interface UIModel
+
+/**
+ * Replacement for KTX checkbox, as that class hides the userObject property of [Actor]
+ */
+@Scene2dDsl
+@OptIn(ExperimentalContracts::class)
+inline fun <S> KWidget<S>.radioButton(
+		obj: UIModel,
+		text: String,
+		style: String = defaultStyle,
+		skin: Skin = Scene2DSkin.defaultSkin,
+		init: KCheckBox.(S) -> Unit = {}
+): KCheckBox {
+	contract { callsInPlace(init, InvocationKind.EXACTLY_ONCE) }
+	val actor = actor(KCheckBox(text, skin, style), init)
+	actor.userObject = obj
+	return actor
+}
+

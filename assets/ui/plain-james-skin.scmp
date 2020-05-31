@@ -3016,7 +3016,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.Color
 						name: disabledFontColor
 						optional: true
-						value: null
+						value: palered
 					}
 					up: {
 						class: com.ray3k.skincomposer.data.StyleProperty
