@@ -16,7 +16,7 @@ class GameSetup {
 
 		val json = Json(JsonConfiguration.Stable)
 		val playerListFile = File(PLAYERLIST_JSON)
-		val playersFromJson = json.parse(PlayerList.serializer(),playerListFile.readText())
+		val playersFromJson = json.parse(PlayerList.serializer(), playerListFile.readText())
 		return playersFromJson.players
 	}
 
@@ -24,11 +24,11 @@ class GameSetup {
 		val HQLIST_JSON = "assets/data/players/hqlist.json"
 		val json = Json(JsonConfiguration.Stable)
 		val hqListFile = File(HQLIST_JSON)
-		val hqsFromJson = json.parse(HQList.serializer(),hqListFile.readText())
+		val hqsFromJson = json.parse(HQList.serializer(), hqListFile.readText())
 		return hqsFromJson.hqs
 	}
 
-	fun getRandomName(): Pair<String,String> {
+	fun getRandomName(): Pair<String, String> {
 		val firstNameString = """
 			Bridgett  
 			Delois  
@@ -83,62 +83,62 @@ class GameSetup {
 		""".trimIndent()
 
 		val lastNameString = """
-			Overstreet		
-			Marks			
-			Hammersmith		
-			Dever			
-			Corzine			
-			Decelles		
-			Humiston		
-			Gautreau		
-			Knuckles		
-			Freund			
-			Asaro			
-			Mcdaniel		
-			Seman			
-			Crusoe			
-			Greenlee		
-			Stella			
-			Hoying			
-			Catoe			
-			Ofarrell		
-			Sanor			
-			Blane			
-			Schoch			
-			Smoak			
-			Huie			
-			Pair			
-			Cortright		
-			Kulig			
-			Marland			
-			Marinez			
-			Machin			
-			Wilsey			
-			Veasley			
-			Morabito		
-			Maslowski		
-			Aceuedo			
-			Faria			
-			Rawling			
-			Laforce			
-			Belknap			
-			Caufield		
-			Stillwagon		
-			Jacobus			
-			Coffield		
-			Greenbaum		
-			Barrus			
-			Mclelland		
-			Zink			
-			Lefkowitz		
-			Fahie			
-			Collier			
+			Overstreet
+			Marks
+			Hammersmith
+			Dever
+			Corzine
+			Decelles
+			Humiston
+			Gautreau
+			Knuckles
+			Freund
+			Asaro
+			Mcdaniel
+			Seman
+			Crusoe
+			Greenlee
+			Stella
+			Hoying
+			Catoe
+			Ofarrell
+			Sanor
+			Blane
+			Schoch
+			Smoak
+			Huie
+			Pair
+			Cortright
+			Kulig
+			Marland
+			Marinez
+			Machin
+			Wilsey
+			Veasley
+			Morabito
+			Maslowski
+			Aceuedo
+			Faria
+			Rawling
+			Laforce
+			Belknap
+			Caufield
+			Stillwagon
+			Jacobus
+			Coffield
+			Greenbaum
+			Barrus
+			Mclelland
+			Zink
+			Lefkowitz
+			Fahie
+			Collier
 		""".trimIndent()
 
 		val firstNames = firstNameString.split("\n")
 		val lastNames = lastNameString.split("\n")
 
 		val r = Random(System.currentTimeMillis())
-		return Pair(firstNames.get(r.nextInt(0,firstNames.size-1)),lastNames.get(r.nextInt(0,lastNames.size-1)))
+		return Pair(firstNames[r.nextInt(0, firstNames.size - 1)], lastNames[r.nextInt(0, lastNames.size - 1)])
 	}
 }

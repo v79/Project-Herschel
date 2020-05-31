@@ -58,18 +58,21 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 //				debug()
 				defaults().align(Align.left).padLeft(10f).padRight(10f).padBottom(10f)
 				setFillParent(true)
+
 				label("Where was your company founded?") { cell ->
 					cell.colspan(4)
 				}
+
 				row().center()
+
 				val hqTable = table {
 					hqs.forEachIndexed { index, hq ->
 						radioButton(hq,"${hq.name}: ${hq.country}", style="new-game-player-name") { cell ->
 							userObject = hq
 							cell.colspan(2)
 							cell.align(Align.left)
-							hqButtonGroup.add(this)
 							cell.expandY().left().top()
+							hqButtonGroup.add(this)
 							onClick {
 								with(countryDetails) {
 									setText(hq.flavourText)
@@ -82,28 +85,30 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 					}
 				}
 				countryDetails = label("","new-game-player-name") { cell ->
-					cell.align(Align.topLeft)
+					setAlignment(Align.topLeft)
+					setWrap(true)
 					cell.colspan(3)
 					cell.fill()
-					setWrap(true)
 					isVisible = false
 				}
 
 				row()
+
 				label("What do your friends call you?") { cell ->
 					cell.colspan(4)
 				}
+
 				row()
-				var rFirstName = label("${randomNames.first}") {cell ->
+
+				val rFirstName = label(randomNames.first) { cell ->
 					cell.align(Align.right)
 				}
-				val nicknameField = textField(style="new-game-player-name") { cell ->
-					cell.padRight(5f)
+				val nicknameField = textField(style="new-game-player-name") { _ ->
 					onChange {
 						startButton.isDisabled = this.text.isEmpty()
 					}
 				}
-				var rLastName = label("${randomNames.second}") { cell ->
+				val rLastName = label(randomNames.second) { cell ->
 					cell.expandX()
 				}
 				button(style = "dice") {
@@ -116,23 +121,33 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 				}
 
 				row()
+
 				startButton = textButton("Start game") { cell ->
 					isDisabled = nicknameField.text.isEmpty()
 					cell.colspan(4)
 					cell.align(Align.right)
 					onClick {
-						println("Beginning game")
-						val selectedHq = hqButtonGroup.allChecked.first().userObject as HQ
-						println("SelectedHQ: ${selectedHq}")
-						val gameState = initializeGameState(rFirstName.text,rLastName.text,nicknameField.text, selectedHq)
+						if(!isDisabled) {
+							val selectedHq = hqButtonGroup.allChecked.first().userObject as HQ
+							val gameState = initializeGameState(rFirstName.text, rLastName.text, nicknameField.text, selectedHq)
+							herschel.state = gameState
+
+							hide()
+							herschel.setScreen<InnerPlanets>()
+						}
 					}
 				}
 			}
 		}
 	}
 
+	/**
+	 * Initialize the game with the player name and chosen HQ.
+	 * For now, gender and age are being hard-coded
+	 */
 	private fun initializeGameState(firstName: StringBuilder, lastName: StringBuilder, nickName: String, hq: HQ): GameState {
-		val gameState = GameState(Player(1,firstName.toString(),lastName.toString(),nickName.toString(),Gender.MALE,26))
+		val gameState = GameState()
+		gameState.player = Player(1,firstName.toString(),lastName.toString(), nickName,Gender.MALE,26)
 		gameState.year = 2050
 		gameState.era = Era.MARS
 		return gameState

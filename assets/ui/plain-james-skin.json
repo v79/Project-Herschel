@@ -9,6 +9,9 @@ BitmapFont: {
 	segoe-ui-18: {
 		file: segoe-ui-18.fnt
 	}
+	segoe-ui-22: {
+		file: segoe-ui-22.fnt
+	}
 	title: {
 		file: font-title-export.fnt
 	}
@@ -109,7 +112,7 @@ CheckBoxStyle: {
 	default: {
 		checkboxOn: checkbox-on
 		checkboxOff: checkbox
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 	}
 	new-game-player-name: {
@@ -149,13 +152,13 @@ ImageButtonStyle: {
 }
 ImageTextButtonStyle: {
 	default: {
-		font: font
+		font: segoe-ui-18
 		up: round-gray
 		down: round-dark-gray
 		over: round-light-gray
 	}
 	toggle: {
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 		up: round-gray
 		down: round-dark-gray
@@ -166,14 +169,14 @@ ImageTextButtonStyle: {
 }
 LabelStyle: {
 	default: {
-		font: font
+		font: segoe-ui-22
 		fontColor: white
 	}
 	title: {
 		font: bahnschrift
 	}
 	mainMenuHover: {
-		font: font
+		font: segoe-ui-22
 		fontColor: palered
 	}
 	new-game-player-name: {
@@ -183,7 +186,7 @@ LabelStyle: {
 }
 ListStyle: {
 	default: {
-		font: font
+		font: segoe-ui-18
 		fontColorSelected: white
 		fontColorUnselected: black
 		selection: selection
@@ -210,7 +213,7 @@ ScrollPaneStyle: {
 }
 SelectBoxStyle: {
 	default: {
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 		scrollStyle: default
 		listStyle: default
@@ -236,7 +239,7 @@ SplitPaneStyle: {
 }
 TextButtonStyle: {
 	default: {
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 		disabledFontColor: palered
 		up: round-gray
@@ -244,7 +247,7 @@ TextButtonStyle: {
 		over: round-light-gray
 	}
 	toggle: {
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 		up: round-gray
 		down: round-dark-gray
@@ -253,7 +256,7 @@ TextButtonStyle: {
 		checkedOver: round-light-gray
 	}
 	special: {
-		font: title
+		font: segoe-ui-22
 		fontColor: black
 		up: round-gray
 		down: round-dark-gray
@@ -262,7 +265,7 @@ TextButtonStyle: {
 }
 TextFieldStyle: {
 	default: {
-		font: font
+		font: segoe-ui-18
 		fontColor: black
 		background: textfield
 		cursor: cursor
@@ -295,11 +298,11 @@ TreeStyle: {
 WindowStyle: {
 	default: {
 		background: window
-		titleFont: bahnschrift
+		titleFont: segoe-ui-22
 	}
 	dialog: {
 		background: window
-		titleFont: font
+		titleFont: segoe-ui-18
 		titleFontColor: black
 		stageBackground: white
 	}

@@ -675,6 +675,23 @@ atlasData: {
 			customized: false
 			tenPatchData: null
 		}
+		{
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/segoe-ui-22.png
+			bgColor: {
+				r: 0
+				g: 0
+				b: 0
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: segoe-ui-22
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+		}
 	]
 }
 jsonData: {
@@ -735,6 +752,11 @@ jsonData: {
 			class: com.ray3k.skincomposer.data.FontData
 			name: segoe-ui-18
 			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/segoe-ui-18.fnt
+		}
+		{
+			class: com.ray3k.skincomposer.data.FontData
+			name: segoe-ui-22
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/segoe-ui-22.fnt
 		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
@@ -1071,7 +1093,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: font
+						value: segoe-ui-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2025,7 +2047,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: font
+						value: segoe-ui-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2209,7 +2231,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: font
+						value: segoe-ui-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2353,7 +2375,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: font
+						value: segoe-ui-22
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2413,7 +2435,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: font
+						value: segoe-ui-22
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2475,7 +2497,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: font
+						value: segoe-ui-18
 					}
 					fontColorSelected: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2706,7 +2728,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: font
+						value: segoe-ui-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2974,7 +2996,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: font
+						value: segoe-ui-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3116,7 +3138,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: font
+						value: segoe-ui-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3258,7 +3280,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: title
+						value: segoe-ui-22
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3402,7 +3424,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: font
+						value: segoe-ui-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3686,7 +3708,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: titleFont
 						optional: false
-						value: bahnschrift
+						value: segoe-ui-22
 					}
 					titleFontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3723,7 +3745,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: titleFont
 						optional: false
-						value: font
+						value: segoe-ui-18
 					}
 					titleFontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty

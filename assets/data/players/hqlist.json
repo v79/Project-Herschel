@@ -4,49 +4,49 @@
             "name": "Geneva",
             "country": "Switzerland",
             "baseScience": 1.2,
-            "flavourText": "Home of the famous CERN particle accelerator, you will benefit from an increased basic science rate  of 1.2, as well as a boost to physics research. Material extraction, however, will be only 0.8 of nominal."
+            "flavourText": "Home of the famous CERN particle accelerator, you will benefit from an increased basic science rate of 1.2, as well as a boost to physics research. Material extraction, however, will be only 0.8 of nominal."
         },
         {
             "name": "Nairobi",
             "country": "Kenya",
             "baseScience": 0.9,
-            "flavourText": "sci 0.9, psych +, material +, pys -"
+            "flavourText": "A true metropolis of Africa, your company prides itself on motivating a diverse workforce to do their very best. Base science and physics is not the strongest, but your understanding of people and the earth make up for it. sci 0.9, psych +, material +, pys -"
         },
         {
             "name": "Beijing",
             "country": "China",
             "baseScience": 1.0,
-            "flavourText": "bio +"
+            "flavourText": "Even now, the Chinese state looks to the future, a future which may shape the very biology of the Chinese people. bio +"
         },
         {
             "name": "Dubai",
             "country": "UAE",
             "baseScience": 0.8,
-            "flavourText": "sci 0.8, chem ++"
+            "flavourText": "The end of the oil age forced the Gulf states to find new ways so supply the world with energy, and their understanding of chemistry is unparalleled. sci 0.8, chem ++"
         },
         {
             "name": "Houston",
             "country": "USA",
             "baseScience": 1.2,
-            "flavourText": "sci 1.2, eng +, bio --"
+            "flavourText": "Manifest destiny finds new forms in this space age, with pure scientific research and engineering skills ahead of most other nations. But religious pressures have kept the USA behind in biology. sci 1.2, eng +, bio --"
         },
         {
             "name": "Kyoto",
             "country": "Japan",
             "baseScience": 1.4,
-            "flavourText": "sci 1.4, material --, pys -"
+            "flavourText": "Despite resource-poor chain of islands, nobody doubts the resourcefulness of the Japanese people. sci 1.4, material --, pys -"
         },
         {
             "name": "Bangalore",
             "country": "India",
             "baseScience": 1.0,
-            "flavourText": "mat ++"
+            "flavourText": "Over a billion people can't be wrong; India's ambitions - and need for raw materials - have shot them to the forefront of the space race. mat ++"
         },
         {
             "name": "São Paulo",
             "country": "Brazil",
             "baseScience": 0.8,
-            "flavourText": "sci 0.8, mat +"
+            "flavourText": "sci 0.8, mat ++"
         }
     ]
 }

@@ -4,22 +4,20 @@ package org.liamjd.herschel.models
  * Game state represents the game in progress. This is the object which will be serialized for saving/loading,
  * and must be static across the entire game
  */
-class GameState(player: Player) {
+class GameState() {
 
 	var year: Int = 2050
 	var era = Era.MARS
-	var player: Player = player
+	lateinit var player: Player
 
-//	constructor(firstName: String, nickName: String, familyName: String, hq: HQ) {
-//		player = Player(1,firstName,familyName,nickName, Gender.MALE, 26)
-//	}
-
-
+	fun endTurn() {
+		year += era.yearIncrement
+	}
 
 
 }
 
-enum class Era(yearIncrement: Int) {
+enum class Era(val yearIncrement: Int) {
 	MARS(1),
 	ASTEROID_BELT(10),
 	GAS_GIANTS(20),

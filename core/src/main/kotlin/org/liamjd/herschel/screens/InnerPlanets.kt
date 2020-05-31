@@ -19,9 +19,9 @@ import ktx.actors.plusAssign
 import ktx.scene2d.*
 import org.liamjd.herschel.Herschel
 import org.liamjd.herschel.MainMenu
-import org.liamjd.herschel.actors.AnimationActor
 import org.liamjd.herschel.extensions.animation
 import org.liamjd.herschel.extensions.onHover
+import org.liamjd.herschel.models.GameState
 import kotlin.random.Random
 import com.badlogic.gdx.utils.Array as GdxArray
 
@@ -29,23 +29,21 @@ data class Planet(val name: String, val x: Float, val scale: Float, val color: C
 
 class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGameplayScreen(herschel, stage, skin) {
 
-	var year = 2050
 	lateinit var yearLabel: Label
 	lateinit var planet: Actor
-	lateinit var animatedPlanet: AnimationActor
-	lateinit var animatedPlanet2: AnimationActor
 	lateinit var backgroundActor: Image
 
 	var shape: ShapeRenderer = ShapeRenderer()
+	lateinit var gameState: GameState
 
 	override fun show() {
+		gameState = herschel.state
 		Scene2DSkin.defaultSkin = screenSkin
 
 		// create a custom actor for displaying a texture image
 		backgroundActor = Image(Texture(Gdx.files.internal("ui/starfield.png")))
 		backgroundActor.setOrigin(stage.width / 2f, stage.height / 2f)
 		backgroundActor.setScale(2f)
-
 
 		// Load the sprite sheet as a Texture
 		val redPlanetTextureSheet = Texture(Gdx.files.internal("ui/red-planet-spritesheet.png"))
@@ -155,7 +153,7 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 						}
 					}
 				}
-				yearLabel = label("Year $year") { cell ->
+				yearLabel = label("Year ${gameState.year}") { cell ->
 					cell.align(Align.right)
 				}
 
@@ -167,7 +165,7 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 					cell.expandY()
 					cell.align(Align.bottomRight)
 					onClick {
-						year += 100
+						gameState.endTurn()
 						backgroundActor.rotateBy(1f)
 					}
 				}
@@ -179,7 +177,7 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 	override fun render(delta: Float) {
 		stage.act(delta)
 
-		yearLabel.setText("Year $year")
+		yearLabel.setText("${gameState.era.name} Year ${gameState.year}")
 		super.render(delta)
 	}
 

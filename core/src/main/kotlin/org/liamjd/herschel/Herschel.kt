@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport
 import ktx.app.KtxGame
 import ktx.inject.Context
 import ktx.inject.register
+import org.liamjd.herschel.models.GameState
 import org.liamjd.herschel.screens.InnerPlanets
 import org.liamjd.herschel.screens.NewGame
 import org.liamjd.herschel.services.newgame.GameSetup
@@ -19,6 +20,7 @@ class Herschel : KtxGame<Screen>() {
 	private val context = Context()
 	private val WIDTH = 1024f
 	private val HEIGHT = 768f
+	lateinit var state: GameState	// global object
 
 	override fun create() {
 		val skin = createSkin()
