@@ -76,7 +76,6 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 							onClick {
 								with(countryDetails) {
 									setText(hq.flavourText)
-									width = 100f
 									isVisible = true
 								}
 							}
