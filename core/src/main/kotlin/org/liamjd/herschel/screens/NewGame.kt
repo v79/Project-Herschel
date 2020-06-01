@@ -103,6 +103,7 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 					cell.align(Align.right)
 				}
 				val nicknameField = textField(style="new-game-player-name") { _ ->
+					text = "Liam"
 					onChange {
 						startButton.isDisabled = this.text.isEmpty()
 					}

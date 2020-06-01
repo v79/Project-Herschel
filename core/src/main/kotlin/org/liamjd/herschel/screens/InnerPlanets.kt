@@ -32,8 +32,12 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 	lateinit var yearLabel: Label
 	lateinit var planet: Actor
 	lateinit var backgroundActor: Image
+	lateinit var gameMenu: KDialog
+	lateinit var blackOverlayImage: Actor
+	var blackScreenRenderer = ShapeRenderer()
+	var modalVisible = false
 
-	var shape: ShapeRenderer = ShapeRenderer()
+	var circleHighlight: ShapeRenderer = ShapeRenderer()
 	lateinit var gameState: GameState
 
 	override fun show() {
@@ -44,6 +48,13 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 		backgroundActor = Image(Texture(Gdx.files.internal("ui/starfield.png")))
 		backgroundActor.setOrigin(stage.width / 2f, stage.height / 2f)
 		backgroundActor.setScale(2f)
+
+
+		blackOverlayImage = Image(screenSkin.getRegion("white-overlay"))
+		blackOverlayImage.setOrigin(0f,0f)
+		blackOverlayImage.setSize(stage.width,stage.height)
+		blackOverlayImage.isVisible = false
+		blackOverlayImage.setColor(0f,0f,0f,0.75f)
 
 		// Load the sprite sheet as a Texture
 		val redPlanetTextureSheet = Texture(Gdx.files.internal("ui/red-planet-spritesheet.png"))
@@ -65,17 +76,18 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 		// add an actor to the stage directly
 		stage += backgroundActor
 
+
 		// horizontal centre line
 		stage.addActor(object : Actor() {
 			override fun draw(batch: Batch?, parentAlpha: Float) {
 				if (batch != null) {
 					batch.end()
-					shape.projectionMatrix = stage.camera.combined
-					shape.begin(ShapeType.Line)
-					shape.color = Color.LIME
-					shape.rect(0f, stage.height / 2f, stage.width, 1f)
-					shape.rect(stage.width / 2f, 0f, 1f, stage.height)
-					shape.end()
+					circleHighlight.projectionMatrix = stage.camera.combined
+					circleHighlight.begin(ShapeType.Line)
+					circleHighlight.color = Color.LIME
+					circleHighlight.rect(0f, stage.height / 2f, stage.width, 1f)
+					circleHighlight.rect(stage.width / 2f, 0f, 1f, stage.height)
+					circleHighlight.end()
 					batch.begin()
 				}
 			}
@@ -101,31 +113,12 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 
 		stage.actors {
 
-			val planetWindow = window("Planet window").apply {
-				isModal = false
-				isMovable = true
-				isVisible = false
-			}
-
-			planetList.forEach { planet ->
-				animation(name = planet.name, animation = Animation<TextureRegion>(0.5f, redPlanetFrames), xScale = planet.scale, yScale = planet.scale) {
-					setPosition(planet.x, ((stage.height / 2) - (redPlanetHeight * this.yScale) / 2))
-					onHover(onEnterFunction = { zoom() }, onExitFunction = { resetZoom() }) {}
-					onClick {
-						println("onClick $planet")
-						planetWindow.isVisible = false
-						planetWindow.titleLabel.setText(planet.name)
-						planetWindow.isVisible = true
-					}
-				}
-			}
-
-
 			val title = Label("Herschel", screenSkin, "title")
 			title.setPosition(stage.width / 2f, stage.height - 20f, Align.center)
 
 			stage += title
 
+			// primary layout
 			table {
 				setFillParent(true) // for the primary layout
 				align(Align.top)
@@ -135,8 +128,11 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 				textButton("Main Menu") { cell ->
 					cell.align(Align.left)
 					onClick {
-						hide()
-						herschel.setScreen<MainMenu>()
+						gameMenu.pack()
+						gameMenu.zIndex = stage.actors.size // this is relative, not absolute
+						gameMenu.setPosition(stage.width / 2f - (gameMenu.width / 2f), stage.height / 2f - (gameMenu.height / 2f))
+						showBlackOverlay()
+						gameMenu.isVisible = true
 					}
 				}
 				horizontalGroup { cell ->
@@ -170,15 +166,84 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 					}
 				}
 			}
+
+			// additional actors
+			gameMenu = buildGameMenu()
+
+			val planetWindow = window("Planet window","blue").apply {
+				isModal = false
+				isMovable = true
+				isVisible = false
+			}
+
+			generatePlanets(planetList, redPlanetFrames, redPlanetHeight, planetWindow)
 		}
+
+		// black overlay for modal dialogs
+		stage+= blackOverlayImage
+	}
+
+	private fun @Scene2dDsl StageWidget.buildGameMenu(): KDialog {
+		 return dialog("Game Menu", style = "blue") {
+			isMovable = false
+			isVisible = false
+			verticalGroup {
+				textButton("Continue") {
+					onClick {
+						hideBlackOverlay()
+						this@dialog.isVisible = false
+					}
+				}
+				textButton("Save")
+				textButton("Options")
+				textButton("Return to main menu") {
+					onClick {
+						this@InnerPlanets.hide()
+						herschel.setScreen<MainMenu>()
+					}
+				}
+			}
+		}
+	}
+
+	private fun @Scene2dDsl StageWidget.generatePlanets(planetList: MutableList<Planet>, redPlanetFrames: com.badlogic.gdx.utils.Array<TextureRegion>, redPlanetHeight: Int, planetWindow: KWindow) {
+		planetList.forEach { planet ->
+			animation(name = planet.name, animation = Animation<TextureRegion>(0.5f, redPlanetFrames), xScale = planet.scale, yScale = planet.scale) {
+				setPosition(planet.x, ((stage.height / 2) - (redPlanetHeight * this.yScale) / 2))
+				onHover(onEnterFunction = { zoom() }, onExitFunction = { resetZoom() }) {}
+				onClick {
+					println("onClick $planet")
+					planetWindow.isVisible = false
+					planetWindow.clearChildren()
+					planetWindow.titleLabel.setText("${planet.name} is lovely")
+					planetWindow.children.forEach { childActor ->
+						println(childActor)
+					}
+					planetWindow.verticalGroup {
+						label("Programmatically added label ${planet.name}")
+						label("Second added label ${planet.name}")
+					}
+					planetWindow.pack()
+					planetWindow.isVisible = true
+				}
+			}
+		}
+	}
+
+	private fun showBlackOverlay() {
+		modalVisible = true
+		blackOverlayImage.isVisible = true
+	}
+	private fun hideBlackOverlay() {
+		modalVisible = false
+		blackOverlayImage.isVisible = false
 	}
 
 
 	override fun render(delta: Float) {
 		stage.act(delta)
-
 		yearLabel.setText("${gameState.era.name} Year ${gameState.year}")
-		super.render(delta)
+		stage.draw()
 	}
 
 	override fun dispose() {
@@ -186,13 +251,3 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 		screenSkin.dispose()
 	}
 }
-
-
-
-
-
-
-
-
-
-
