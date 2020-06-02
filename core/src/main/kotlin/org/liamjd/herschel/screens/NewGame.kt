@@ -84,11 +84,12 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 					}
 				}
 				countryDetails = label("","new-game-player-name") { cell ->
+					setText(hqs.first().flavourText)
 					setAlignment(Align.topLeft)
 					setWrap(true)
 					cell.colspan(3)
 					cell.fill()
-					isVisible = false
+					isVisible = true
 				}
 
 				row()

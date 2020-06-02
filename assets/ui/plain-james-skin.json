@@ -97,9 +97,9 @@ TintedDrawable: {
 }
 ButtonStyle: {
 	default: {
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
 	}
 	toggle: {
 		up: round-gray
@@ -132,16 +132,16 @@ CheckBoxStyle: {
 }
 ImageButtonStyle: {
 	default: {
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
 	}
 	toggle: {
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
-		checked: round-dark-gray
-		checkedOver: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
+		checked: button-blue-over
+		checkedOver: button-blue-over
 	}
 	sciEngButton: {
 		imageUp: engineering-cog
@@ -159,18 +159,19 @@ ImageButtonStyle: {
 ImageTextButtonStyle: {
 	default: {
 		font: oxanium-18-semibold
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
 	}
 	toggle: {
 		font: oxanium-18-semibold
 		fontColor: black
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
-		checked: round-dark-gray
-		checkedOver: round-light-gray
+		up: button-blue
+		down: button-blue-over
+		over: button-blue-over
+		checked: button-blue-over
+		checkedOver: button-blue-over
+		disabled: button-blue-over
 	}
 }
 LabelStyle: {
@@ -252,25 +253,25 @@ TextButtonStyle: {
 		font: oxanium-18-semibold
 		fontColor: black
 		disabledFontColor: palered
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
 	}
 	toggle: {
 		font: oxanium-18-semibold
 		fontColor: black
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
-		checked: round-dark-gray
-		checkedOver: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
+		checked: button-blue-over
+		checkedOver: button-blue-over
 	}
 	special: {
 		font: oxanium-22-semibold
 		fontColor: black
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
 	}
 }
 TextFieldStyle: {
@@ -310,19 +311,20 @@ TreeStyle: {
 }
 WindowStyle: {
 	default: {
-		background: window
+		background: panel-pale
 		titleFont: oxanium-22-semibold
+		titleFontColor: black
 	}
 	dialog: {
-		background: window-blue
-		titleFont: oxanium-22-semibold
-		titleFontColor: white
+		background: panel-pale
+		titleFont: oxanium-18-semibold
+		titleFontColor: black
 		stageBackground: white
 	}
 	blue: {
-		background: window-blue
+		background: panel-pale
 		titleFont: oxanium-22-semibold
-		titleFontColor: white
+		titleFontColor: black
 	}
 }
 }

@@ -29,32 +29,36 @@ data class Planet(val name: String, val x: Float, val scale: Float, val color: C
 
 class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGameplayScreen(herschel, stage, skin) {
 
+	lateinit var gameState: GameState
+
 	lateinit var yearLabel: Label
 	lateinit var planet: Actor
-	lateinit var backgroundActor: Image
+	var backgroundActor: Image = Image(Texture(Gdx.files.internal("ui/starfield.png")))
 	lateinit var gameMenu: KDialog
 	lateinit var blackOverlayImage: Actor
-	var blackScreenRenderer = ShapeRenderer()
+	lateinit var windowCloseButton: Actor
 	var modalVisible = false
 
 	var circleHighlight: ShapeRenderer = ShapeRenderer()
-	lateinit var gameState: GameState
+
+	init {
+		// create a custom actor for displaying a texture image
+		backgroundActor.setOrigin(stage.width / 2f, stage.height / 2f)
+		backgroundActor.setScale(2f)
+	}
 
 	override fun show() {
 		gameState = herschel.state
 		Scene2DSkin.defaultSkin = screenSkin
-
-		// create a custom actor for displaying a texture image
-		backgroundActor = Image(Texture(Gdx.files.internal("ui/starfield.png")))
-		backgroundActor.setOrigin(stage.width / 2f, stage.height / 2f)
-		backgroundActor.setScale(2f)
-
 
 		blackOverlayImage = Image(screenSkin.getRegion("white-overlay"))
 		blackOverlayImage.setOrigin(0f,0f)
 		blackOverlayImage.setSize(stage.width,stage.height)
 		blackOverlayImage.isVisible = false
 		blackOverlayImage.setColor(0f,0f,0f,0.75f)
+
+		windowCloseButton = Image(screenSkin.getRegion("grey_crossGrey"))
+		windowCloseButton.setSize(24f,24f)
 
 		// Load the sprite sheet as a Texture
 		val redPlanetTextureSheet = Texture(Gdx.files.internal("ui/red-planet-spritesheet.png"))
@@ -181,6 +185,7 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 
 		// black overlay for modal dialogs
 		stage+= blackOverlayImage
+
 	}
 
 	private fun @Scene2dDsl StageWidget.buildGameMenu(): KDialog {
@@ -202,7 +207,7 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 						herschel.setScreen<MainMenu>()
 					}
 				}
-			}
+			}.space(10f)
 		}
 	}
 
@@ -216,9 +221,10 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 					planetWindow.isVisible = false
 					planetWindow.clearChildren()
 					planetWindow.titleLabel.setText("${planet.name} is lovely")
-					planetWindow.children.forEach { childActor ->
-						println(childActor)
-					}
+
+					planetWindow.titleTable.add(windowCloseButton)
+					windowCloseButton.onClick { planetWindow.isVisible = false }
+
 					planetWindow.verticalGroup {
 						label("Programmatically added label ${planet.name}")
 						label("Second added label ${planet.name}")

@@ -639,6 +639,91 @@ atlasData: {
 			customized: false
 			tenPatchData: null
 		}
+		{
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/grey_crossGrey.png
+			bgColor: {
+				r: 0
+				g: 0
+				b: 0
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: grey_crossGrey
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+		}
+		{
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/panel-pale.9.png
+			bgColor: {
+				r: 0
+				g: 0
+				b: 0
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: panel-pale
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+		}
+		{
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/button-blue.9.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: button-blue
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+		}
+		{
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/button-blue-over.9.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: button-blue-over
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+		}
+		{
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/button-blue-down.9.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: button-blue-down
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+		}
 	]
 	fontDrawables: [
 		{
@@ -855,21 +940,21 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: round-gray
+						value: button-blue
 					}
 					down: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: round-dark-gray
+						value: button-blue-down
 					}
 					over: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					checked: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -1555,21 +1640,21 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: round-gray
+						value: button-blue
 					}
 					down: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: round-dark-gray
+						value: button-blue-down
 					}
 					over: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					checked: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -1690,35 +1775,35 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: round-gray
+						value: button-blue
 					}
 					down: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: round-dark-gray
+						value: button-blue-down
 					}
 					over: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					checked: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: checked
 						optional: true
-						value: round-dark-gray
+						value: button-blue-over
 					}
 					checkedOver: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: checkedOver
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					disabled: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2174,21 +2259,21 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: round-gray
+						value: button-blue
 					}
 					down: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: round-dark-gray
+						value: button-blue-down
 					}
 					over: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					checked: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2358,42 +2443,42 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: round-gray
+						value: button-blue
 					}
 					down: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: round-dark-gray
+						value: button-blue-over
 					}
 					over: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					checked: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: checked
 						optional: true
-						value: round-dark-gray
+						value: button-blue-over
 					}
 					checkedOver: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: checkedOver
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					disabled: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: disabled
 						optional: true
-						value: null
+						value: button-blue-over
 					}
 					pressedOffsetX: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3153,21 +3238,21 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: round-gray
+						value: button-blue
 					}
 					down: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: round-dark-gray
+						value: button-blue-down
 					}
 					over: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					checked: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3295,35 +3380,35 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: round-gray
+						value: button-blue
 					}
 					down: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: round-dark-gray
+						value: button-blue-down
 					}
 					over: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					checked: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: checked
 						optional: true
-						value: round-dark-gray
+						value: button-blue-over
 					}
 					checkedOver: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: checkedOver
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					disabled: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3437,21 +3522,21 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: round-gray
+						value: button-blue
 					}
 					down: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: round-dark-gray
+						value: button-blue-down
 					}
 					over: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: round-light-gray
+						value: button-blue-over
 					}
 					checked: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3839,7 +3924,7 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: background
 						optional: true
-						value: window
+						value: panel-pale
 					}
 					titleFont: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3853,7 +3938,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.Color
 						name: titleFontColor
 						optional: true
-						value: null
+						value: black
 					}
 					stageBackground: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3876,21 +3961,21 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: background
 						optional: true
-						value: window-blue
+						value: panel-pale
 					}
 					titleFont: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: titleFont
 						optional: false
-						value: oxanium-22-semibold
+						value: oxanium-18-semibold
 					}
 					titleFontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
 						type: com.badlogic.gdx.graphics.Color
 						name: titleFontColor
 						optional: true
-						value: white
+						value: black
 					}
 					stageBackground: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3913,7 +3998,7 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: background
 						optional: true
-						value: window-blue
+						value: panel-pale
 					}
 					titleFont: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3927,7 +4012,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.Color
 						name: titleFontColor
 						optional: true
-						value: white
+						value: black
 					}
 					stageBackground: {
 						class: com.ray3k.skincomposer.data.StyleProperty
