@@ -6,14 +6,20 @@ BitmapFont: {
 	font: {
 		file: font-export.fnt
 	}
+	oxanium-18: {
+		file: oxanium-18.fnt
+	}
+	oxanium-18-semibold: {
+		file: oxanium-18-semibold.fnt
+	}
+	oxanium-22-semibold: {
+		file: oxanium-22-semibold.fnt
+	}
 	segoe-ui-18: {
 		file: segoe-ui-18.fnt
 	}
 	segoe-ui-22: {
 		file: segoe-ui-22.fnt
-	}
-	title: {
-		file: font-title-export.fnt
 	}
 }
 Color: {
@@ -152,13 +158,13 @@ ImageButtonStyle: {
 }
 ImageTextButtonStyle: {
 	default: {
-		font: segoe-ui-18
+		font: oxanium-18-semibold
 		up: round-gray
 		down: round-dark-gray
 		over: round-light-gray
 	}
 	toggle: {
-		font: segoe-ui-18
+		font: oxanium-18-semibold
 		fontColor: black
 		up: round-gray
 		down: round-dark-gray
@@ -169,28 +175,28 @@ ImageTextButtonStyle: {
 }
 LabelStyle: {
 	default: {
-		font: segoe-ui-18
+		font: oxanium-18
 		fontColor: white
 	}
 	title: {
 		font: bahnschrift
 	}
 	mainMenuHover: {
-		font: segoe-ui-22
+		font: oxanium-22-semibold
 		fontColor: palered
 	}
 	new-game-player-name: {
-		font: segoe-ui-18
+		font: oxanium-18
 		fontColor: white
 	}
 	mainMenu: {
-		font: segoe-ui-22
+		font: oxanium-22-semibold
 		fontColor: white
 	}
 }
 ListStyle: {
 	default: {
-		font: segoe-ui-18
+		font: oxanium-18
 		fontColorSelected: white
 		fontColorUnselected: black
 		selection: selection
@@ -217,7 +223,7 @@ ScrollPaneStyle: {
 }
 SelectBoxStyle: {
 	default: {
-		font: segoe-ui-18
+		font: oxanium-18
 		fontColor: black
 		scrollStyle: default
 		listStyle: default
@@ -243,7 +249,7 @@ SplitPaneStyle: {
 }
 TextButtonStyle: {
 	default: {
-		font: segoe-ui-18
+		font: oxanium-18-semibold
 		fontColor: black
 		disabledFontColor: palered
 		up: round-gray
@@ -251,7 +257,7 @@ TextButtonStyle: {
 		over: round-light-gray
 	}
 	toggle: {
-		font: segoe-ui-18
+		font: oxanium-18-semibold
 		fontColor: black
 		up: round-gray
 		down: round-dark-gray
@@ -260,7 +266,7 @@ TextButtonStyle: {
 		checkedOver: round-light-gray
 	}
 	special: {
-		font: segoe-ui-22
+		font: oxanium-22-semibold
 		fontColor: black
 		up: round-gray
 		down: round-dark-gray
@@ -269,7 +275,7 @@ TextButtonStyle: {
 }
 TextFieldStyle: {
 	default: {
-		font: segoe-ui-18
+		font: oxanium-18
 		fontColor: black
 		background: textfield
 		cursor: cursor
@@ -277,7 +283,7 @@ TextFieldStyle: {
 	}
 	new-game-player-name: {
 		parent: default
-		font: segoe-ui-18
+		font: oxanium-18
 		fontColor: black
 	}
 }
@@ -305,17 +311,17 @@ TreeStyle: {
 WindowStyle: {
 	default: {
 		background: window
-		titleFont: segoe-ui-22
+		titleFont: oxanium-22-semibold
 	}
 	dialog: {
 		background: window-blue
-		titleFont: segoe-ui-18
+		titleFont: oxanium-22-semibold
 		titleFontColor: white
 		stageBackground: white
 	}
 	blue: {
 		background: window-blue
-		titleFont: segoe-ui-22
+		titleFont: oxanium-22-semibold
 		titleFontColor: white
 	}
 }

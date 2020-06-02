@@ -676,23 +676,6 @@ atlasData: {
 			tenPatchData: null
 		}
 		{
-			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/font-title-export.png
-			bgColor: {
-				r: 0
-				g: 0
-				b: 0
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: font-title-export
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-		}
-		{
 			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/segoe-ui-18.png
 			bgColor: {
 				r: 0
@@ -720,6 +703,57 @@ atlasData: {
 			tint: null
 			tintName: null
 			name: segoe-ui-22
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+		}
+		{
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/oxanium-18.png
+			bgColor: {
+				r: 0
+				g: 0
+				b: 0
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: oxanium-18
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+		}
+		{
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/oxanium-18-semibold.png
+			bgColor: {
+				r: 0
+				g: 0
+				b: 0
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: oxanium-18-semibold
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+		}
+		{
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/oxanium-22-semibold.png
+			bgColor: {
+				r: 0
+				g: 0
+				b: 0
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: oxanium-22-semibold
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -784,6 +818,21 @@ jsonData: {
 		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
+			name: oxanium-18
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/oxanium-18.fnt
+		}
+		{
+			class: com.ray3k.skincomposer.data.FontData
+			name: oxanium-18-semibold
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/oxanium-18-semibold.fnt
+		}
+		{
+			class: com.ray3k.skincomposer.data.FontData
+			name: oxanium-22-semibold
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/oxanium-22-semibold.fnt
+		}
+		{
+			class: com.ray3k.skincomposer.data.FontData
 			name: segoe-ui-18
 			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/segoe-ui-18.fnt
 		}
@@ -791,11 +840,6 @@ jsonData: {
 			class: com.ray3k.skincomposer.data.FontData
 			name: segoe-ui-22
 			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/segoe-ui-22.fnt
-		}
-		{
-			class: com.ray3k.skincomposer.data.FontData
-			name: title
-			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/font-title-export.fnt
 		}
 	]
 	freeTypeFonts: []
@@ -2081,7 +2125,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-18-semibold
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2265,7 +2309,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-18-semibold
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2409,7 +2453,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2469,7 +2513,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-22
+						value: oxanium-22-semibold
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2499,7 +2543,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2529,7 +2573,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-22
+						value: oxanium-22-semibold
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2561,7 +2605,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-18
 					}
 					fontColorSelected: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -2792,7 +2836,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3060,7 +3104,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-18-semibold
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3202,7 +3246,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-18-semibold
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3344,7 +3388,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-22
+						value: oxanium-22-semibold
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3488,7 +3532,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3574,7 +3618,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-18
 					}
 					fontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3802,7 +3846,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: titleFont
 						optional: false
-						value: segoe-ui-22
+						value: oxanium-22-semibold
 					}
 					titleFontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3839,7 +3883,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: titleFont
 						optional: false
-						value: segoe-ui-18
+						value: oxanium-22-semibold
 					}
 					titleFontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
@@ -3876,7 +3920,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: titleFont
 						optional: false
-						value: segoe-ui-22
+						value: oxanium-22-semibold
 					}
 					titleFontColor: {
 						class: com.ray3k.skincomposer.data.StyleProperty
