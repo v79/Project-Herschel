@@ -29,6 +29,24 @@ Color: {
 		b: 0
 		a: 1
 	}
+	chem_yellow: {
+		r: 0.87469006
+		g: 0.9233335
+		b: 0.07078874
+		a: 1
+	}
+	dna_green: {
+		r: 0.17755556
+		g: 0.78333336
+		b: 0.30709106
+		a: 1
+	}
+	eng_orange: {
+		r: 0.8400002
+		g: 0.4426999
+		b: 0.047599792
+		a: 1
+	}
 	gray: {
 		r: 0.68333334
 		g: 0.68333334
@@ -39,6 +57,18 @@ Color: {
 		r: 0.78
 		g: 0.2938
 		b: 0.2938
+		a: 1
+	}
+	phys_blue: {
+		r: 0.09635464
+		g: 0.022755384
+		b: 0.85333353
+		a: 1
+	}
+	psych_red: {
+		r: 0.88333356
+		g: 0.14427763
+		b: 0.14427763
 		a: 1
 	}
 	white: {
@@ -94,6 +124,31 @@ TintedDrawable: {
 			a: 1
 		}
 	}
+	icon_biology_dna-green: {
+		name: icon_biology_dna
+		color: {
+			r: 0.15733331
+			g: 0.7866667
+			b: 0.24169898
+			a: 1
+		}
+	}
+	icon_engineering_cog-orange: {
+		name: icon_engineering_cog
+		color: eng_orange
+	}
+	icon_physics_atom-blue: {
+		name: icon_physics_atom
+		color: phys_blue
+	}
+	icon_chemistry_flask-yellow: {
+		name: icon_chemistry_flask
+		color: chem_yellow
+	}
+	icon_psychology_brain-red: {
+		name: icon_psychology_brain
+		color: psych_red
+	}
 }
 ButtonStyle: {
 	default: {
@@ -144,14 +199,10 @@ ImageButtonStyle: {
 		checkedOver: button-blue-over
 	}
 	sciEngButton: {
-		imageUp: engineering-cog
-		up: engineering-cog
 		pressedOffsetX: -1
 		pressedOffsetY: -1
 	}
 	sciChmButton: {
-		imageUp: chemistry
-		up: chemistry
 		pressedOffsetX: -1
 		pressedOffsetY: -1
 	}
@@ -172,6 +223,39 @@ ImageTextButtonStyle: {
 		checked: button-blue-over
 		checkedOver: button-blue-over
 		disabled: button-blue-over
+	}
+	science_icon: {
+		font: oxanium-18
+		fontColor: white
+	}
+	science_icon_biology: {
+		parent: science_icon
+		imageUp: icon_biology_dna-green
+		imageOver: icon_biology_dna
+		font: oxanium-18
+	}
+	science_icon_engineering: {
+		imageUp: icon_engineering_cog-orange
+		imageOver: icon_engineering_cog
+		font: oxanium-18
+	}
+	science_icon_physics: {
+		imageUp: icon_physics_atom-blue
+		imageOver: icon_physics_atom
+		font: oxanium-18
+		fontColor: white
+	}
+	science_icon_chemistry: {
+		imageUp: icon_chemistry_flask-yellow
+		imageOver: icon_chemistry_flask
+		font: oxanium-18
+		fontColor: white
+	}
+	science_icon_psychology: {
+		imageUp: icon_psychology_brain-red
+		imageOver: icon_psychology_brain
+		font: oxanium-18
+		fontColor: white
 	}
 }
 LabelStyle: {

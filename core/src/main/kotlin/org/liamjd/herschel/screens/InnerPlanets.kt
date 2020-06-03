@@ -129,7 +129,7 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 
 				padding(10f, 10f, 5f, 5f)
 
-				textButton("Main Menu") { cell ->
+				val gameMenu_b = textButton("Main Menu") { cell ->
 					cell.align(Align.left)
 					onClick {
 						gameMenu.pack()
@@ -139,18 +139,44 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 						gameMenu.isVisible = true
 					}
 				}
-				horizontalGroup { cell ->
+				val sciIcons_vg = horizontalGroup { cell ->
+					space(3f)
 					cell.expandX()
 					cell.align(Align.left)
-					imageButton(style = "sciEngButton") {
+					imageTextButton(text = "123",style = "science_icon_biology") { cell ->
+						scaleIcon(image, -0.5f,Align.center)
+						onClick {
+							println("Clicked on biology science")
+						}
+						textTooltip("Biology",style = "simple")
+					}
+					imageTextButton(text = "456",style = "science_icon_engineering") {
+						scaleIcon(image, -0.5f,Align.center)
 						onClick {
 							println("Clicked on engineering science")
 						}
+						textTooltip("Engineering",style="simple")
 					}
-					imageButton(style = "sciChmButton") {
+					imageTextButton(text = "12164",style = "science_icon_physics") { cell ->
+						scaleIcon(image, -0.5f,Align.center)
+						onClick {
+							println("Clicked on physics science")
+						}
+						textTooltip("Physics",style="simple")
+					}
+					imageTextButton(text = "2424",style = "science_icon_chemistry") { cell ->
+						scaleIcon(image, -0.5f,Align.center)
 						onClick {
 							println("Clicked on chemistry science")
 						}
+						textTooltip("Chemistry",style="simple")
+					}
+					imageTextButton(text = "5",style = "science_icon_psychology") { cell ->
+						scaleIcon(image, -0.5f,Align.center)
+						onClick {
+							println("Clicked on psychology science")
+						}
+						textTooltip("Psychology",style="simple")
 					}
 				}
 				yearLabel = label("Year ${gameState.year}") { cell ->
@@ -159,14 +185,14 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 
 				row().expandY().align(Align.bottom) // create a new row, push it to the bottom
 
-				textButton("Next turn") { cell ->
+				val next_b = textButton("Next turn") { cell ->
 					cell.colspan(4)
 					cell.expandX()
 					cell.expandY()
 					cell.align(Align.bottomRight)
 					onClick {
 						gameState.endTurn()
-						backgroundActor.rotateBy(1f)
+						backgroundActor.rotateBy(-1f)
 					}
 				}
 			}
@@ -186,6 +212,12 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 		// black overlay for modal dialogs
 		stage+= blackOverlayImage
 
+	}
+
+	private fun KImageTextButton.scaleIcon(image: Image, scale: Float, align: Int) {
+		image.scaleBy(scale) // scale first
+		pack()    // then pack
+		image.setOrigin(align) // and finally center. The order matters!
 	}
 
 	private fun @Scene2dDsl StageWidget.buildGameMenu(): KDialog {
