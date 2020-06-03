@@ -1,5 +1,7 @@
 package org.liamjd.herschel.models
 
+import org.liamjd.herschel.services.UIConfiguration
+
 /**
  * Game state represents the game in progress. This is the object which will be serialized for saving/loading,
  * and must be static across the entire game
@@ -10,8 +12,13 @@ class GameState() {
 	var era = Era.MARS
 	lateinit var player: Player
 
+	val scienceIcons = UIConfiguration.scienceIcons
+
 	fun endTurn() {
 		year += era.yearIncrement
+		scienceIcons.forEach { science ->
+			science.value++
+		}
 	}
 
 

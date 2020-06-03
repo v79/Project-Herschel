@@ -22,6 +22,7 @@ import org.liamjd.herschel.MainMenu
 import org.liamjd.herschel.extensions.animation
 import org.liamjd.herschel.extensions.onHover
 import org.liamjd.herschel.models.GameState
+import org.liamjd.herschel.uicomponents.scienceIcon
 import kotlin.random.Random
 import com.badlogic.gdx.utils.Array as GdxArray
 
@@ -143,40 +144,18 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 					space(3f)
 					cell.expandX()
 					cell.align(Align.left)
-					imageTextButton(text = "123",style = "science_icon_biology") { cell ->
-						scaleIcon(image, -0.5f,Align.center)
-						onClick {
-							println("Clicked on biology science")
+
+					gameState.scienceIcons.forEach { science ->
+						scienceIcon(science) {
+							scaleIcon(image, science.iconScale)
+							val tt = textTooltip(science.tooltip,style="simple")
+							onClick {
+								println("Clicked on ${science.name} with value ${science.value}")
+								science.value++
+								this.label.setText(science.value.toString())
+								tt.actor.setText("${science.name} now at ${science.value}")
+							}
 						}
-						textTooltip("Biology",style = "simple")
-					}
-					imageTextButton(text = "456",style = "science_icon_engineering") {
-						scaleIcon(image, -0.5f,Align.center)
-						onClick {
-							println("Clicked on engineering science")
-						}
-						textTooltip("Engineering",style="simple")
-					}
-					imageTextButton(text = "12164",style = "science_icon_physics") { cell ->
-						scaleIcon(image, -0.5f,Align.center)
-						onClick {
-							println("Clicked on physics science")
-						}
-						textTooltip("Physics",style="simple")
-					}
-					imageTextButton(text = "2424",style = "science_icon_chemistry") { cell ->
-						scaleIcon(image, -0.5f,Align.center)
-						onClick {
-							println("Clicked on chemistry science")
-						}
-						textTooltip("Chemistry",style="simple")
-					}
-					imageTextButton(text = "5",style = "science_icon_psychology") { cell ->
-						scaleIcon(image, -0.5f,Align.center)
-						onClick {
-							println("Clicked on psychology science")
-						}
-						textTooltip("Psychology",style="simple")
 					}
 				}
 				yearLabel = label("Year ${gameState.year}") { cell ->
@@ -214,7 +193,7 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 
 	}
 
-	private fun KImageTextButton.scaleIcon(image: Image, scale: Float, align: Int) {
+	private fun KImageTextButton.scaleIcon(image: Image, scale: Float, align: Int = Align.center) {
 		image.scaleBy(scale) // scale first
 		pack()    // then pack
 		image.setOrigin(align) // and finally center. The order matters!
@@ -281,6 +260,9 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin) : AbstractGamep
 	override fun render(delta: Float) {
 		stage.act(delta)
 		yearLabel.setText("${gameState.era.name} Year ${gameState.year}")
+		gameState.scienceIcons.forEach {
+
+		}
 		stage.draw()
 	}
 
