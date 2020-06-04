@@ -323,6 +323,13 @@ touchpad-knob
   orig: 64, 64
   offset: 0, 0
   index: -1
+ui-background-blue
+  rotate: false
+  xy: 604, 725
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
 vertical-split-pane
   rotate: false
   xy: 204, 246

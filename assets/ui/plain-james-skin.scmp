@@ -865,6 +865,23 @@ atlasData: {
 			customized: false
 			tenPatchData: null
 		}
+		{
+			file: D:/Development/Games/KTX/Herschel/assets/ui/plain-james-skin_data/ui-background-blue.png
+			bgColor: {
+				r: 0
+				g: 0
+				b: 0
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ui-background-blue
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+		}
 	]
 	fontDrawables: [
 		{

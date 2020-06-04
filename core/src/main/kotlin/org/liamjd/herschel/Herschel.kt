@@ -37,7 +37,7 @@ class Herschel : KtxGame<Screen>() {
 			bindSingleton(GameSetup())
 			// use DI to add each screen
 			addScreen(MainMenu(inject(), inject(), inject()))
-			addScreen(InnerPlanets(inject(), inject(), inject()))
+			addScreen(InnerPlanets(inject(), inject(), inject(),inject()))
 			addScreen(NewGame(inject(),inject(),inject(),inject()))
 		}
 		// set the launch screen
