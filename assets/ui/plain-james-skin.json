@@ -6,14 +6,20 @@ BitmapFont: {
 	font: {
 		file: font-export.fnt
 	}
+	oxanium-18: {
+		file: oxanium-18.fnt
+	}
+	oxanium-18-semibold: {
+		file: oxanium-18-semibold.fnt
+	}
+	oxanium-22-semibold: {
+		file: oxanium-22-semibold.fnt
+	}
 	segoe-ui-18: {
 		file: segoe-ui-18.fnt
 	}
 	segoe-ui-22: {
 		file: segoe-ui-22.fnt
-	}
-	title: {
-		file: font-title-export.fnt
 	}
 }
 Color: {
@@ -21,6 +27,24 @@ Color: {
 		r: 0
 		g: 0
 		b: 0
+		a: 1
+	}
+	chem_yellow: {
+		r: 0.87469006
+		g: 0.9233335
+		b: 0.07078874
+		a: 1
+	}
+	dna_green: {
+		r: 0.17755556
+		g: 0.78333336
+		b: 0.30709106
+		a: 1
+	}
+	eng_orange: {
+		r: 0.8400002
+		g: 0.4426999
+		b: 0.047599792
 		a: 1
 	}
 	gray: {
@@ -33,6 +57,18 @@ Color: {
 		r: 0.78
 		g: 0.2938
 		b: 0.2938
+		a: 1
+	}
+	phys_blue: {
+		r: 0.09635464
+		g: 0.022755384
+		b: 0.85333353
+		a: 1
+	}
+	psych_red: {
+		r: 0.88333356
+		g: 0.14427763
+		b: 0.14427763
 		a: 1
 	}
 	white: {
@@ -88,12 +124,37 @@ TintedDrawable: {
 			a: 1
 		}
 	}
+	icon_biology_dna-green: {
+		name: icon_biology_dna
+		color: {
+			r: 0.15733331
+			g: 0.7866667
+			b: 0.24169898
+			a: 1
+		}
+	}
+	icon_engineering_cog-orange: {
+		name: icon_engineering_cog
+		color: eng_orange
+	}
+	icon_physics_atom-blue: {
+		name: icon_physics_atom
+		color: phys_blue
+	}
+	icon_chemistry_flask-yellow: {
+		name: icon_chemistry_flask
+		color: chem_yellow
+	}
+	icon_psychology_brain-red: {
+		name: icon_psychology_brain
+		color: psych_red
+	}
 }
 ButtonStyle: {
 	default: {
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
 	}
 	toggle: {
 		up: round-gray
@@ -126,67 +187,101 @@ CheckBoxStyle: {
 }
 ImageButtonStyle: {
 	default: {
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
 	}
 	toggle: {
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
-		checked: round-dark-gray
-		checkedOver: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
+		checked: button-blue-over
+		checkedOver: button-blue-over
 	}
 	sciEngButton: {
-		imageUp: engineering-cog
-		up: engineering-cog
 		pressedOffsetX: -1
 		pressedOffsetY: -1
 	}
 	sciChmButton: {
-		imageUp: chemistry
-		up: chemistry
 		pressedOffsetX: -1
 		pressedOffsetY: -1
 	}
 }
 ImageTextButtonStyle: {
 	default: {
-		font: segoe-ui-18
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
+		font: oxanium-18-semibold
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
 	}
 	toggle: {
-		font: segoe-ui-18
+		font: oxanium-18-semibold
 		fontColor: black
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
-		checked: round-dark-gray
-		checkedOver: round-light-gray
+		up: button-blue
+		down: button-blue-over
+		over: button-blue-over
+		checked: button-blue-over
+		checkedOver: button-blue-over
+		disabled: button-blue-over
+	}
+	science_icon: {
+		font: oxanium-18
+		fontColor: white
+	}
+	science_icon_biology: {
+		parent: science_icon
+		imageUp: icon_biology_dna-green
+		imageOver: icon_biology_dna
+		font: oxanium-18
+	}
+	science_icon_engineering: {
+		imageUp: icon_engineering_cog-orange
+		imageOver: icon_engineering_cog
+		font: oxanium-18
+	}
+	science_icon_physics: {
+		imageUp: icon_physics_atom-blue
+		imageOver: icon_physics_atom
+		font: oxanium-18
+		fontColor: white
+	}
+	science_icon_chemistry: {
+		imageUp: icon_chemistry_flask-yellow
+		imageOver: icon_chemistry_flask
+		font: oxanium-18
+		fontColor: white
+	}
+	science_icon_psychology: {
+		imageUp: icon_psychology_brain-red
+		imageOver: icon_psychology_brain
+		font: oxanium-18
+		fontColor: white
 	}
 }
 LabelStyle: {
 	default: {
-		font: segoe-ui-22
+		font: oxanium-18
 		fontColor: white
 	}
 	title: {
 		font: bahnschrift
 	}
 	mainMenuHover: {
-		font: segoe-ui-22
+		font: oxanium-22-semibold
 		fontColor: palered
 	}
 	new-game-player-name: {
-		font: segoe-ui-18
+		font: oxanium-18
+		fontColor: white
+	}
+	mainMenu: {
+		font: oxanium-22-semibold
 		fontColor: white
 	}
 }
 ListStyle: {
 	default: {
-		font: segoe-ui-18
+		font: oxanium-18
 		fontColorSelected: white
 		fontColorUnselected: black
 		selection: selection
@@ -213,7 +308,7 @@ ScrollPaneStyle: {
 }
 SelectBoxStyle: {
 	default: {
-		font: segoe-ui-18
+		font: oxanium-18
 		fontColor: black
 		scrollStyle: default
 		listStyle: default
@@ -239,33 +334,33 @@ SplitPaneStyle: {
 }
 TextButtonStyle: {
 	default: {
-		font: segoe-ui-18
+		font: oxanium-18-semibold
 		fontColor: black
 		disabledFontColor: palered
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
 	}
 	toggle: {
-		font: segoe-ui-18
+		font: oxanium-18-semibold
 		fontColor: black
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
-		checked: round-dark-gray
-		checkedOver: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
+		checked: button-blue-over
+		checkedOver: button-blue-over
 	}
 	special: {
-		font: segoe-ui-22
+		font: oxanium-22-semibold
 		fontColor: black
-		up: round-gray
-		down: round-dark-gray
-		over: round-light-gray
+		up: button-blue
+		down: button-blue-down
+		over: button-blue-over
 	}
 }
 TextFieldStyle: {
 	default: {
-		font: segoe-ui-18
+		font: oxanium-18
 		fontColor: black
 		background: textfield
 		cursor: cursor
@@ -273,7 +368,7 @@ TextFieldStyle: {
 	}
 	new-game-player-name: {
 		parent: default
-		font: segoe-ui-18
+		font: oxanium-18
 		fontColor: black
 	}
 }
@@ -281,6 +376,9 @@ TextTooltipStyle: {
 	default: {
 		label: default
 		background: round-white
+	}
+	simple: {
+		label: default
 	}
 }
 TouchpadStyle: {
@@ -297,14 +395,20 @@ TreeStyle: {
 }
 WindowStyle: {
 	default: {
-		background: window
-		titleFont: segoe-ui-22
+		background: panel-pale
+		titleFont: oxanium-22-semibold
+		titleFontColor: black
 	}
 	dialog: {
-		background: window
-		titleFont: segoe-ui-18
+		background: panel-pale
+		titleFont: oxanium-18-semibold
 		titleFontColor: black
 		stageBackground: white
+	}
+	blue: {
+		background: panel-pale
+		titleFont: oxanium-22-semibold
+		titleFontColor: black
 	}
 }
 }

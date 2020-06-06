@@ -1,0 +1,444 @@
+
+saturn.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0001
+  rotate: false
+  xy: 2, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0002
+  rotate: false
+  xy: 2, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0003
+  rotate: false
+  xy: 213, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0004
+  rotate: false
+  xy: 2, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0005
+  rotate: false
+  xy: 213, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0006
+  rotate: false
+  xy: 424, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0007
+  rotate: false
+  xy: 2, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0008
+  rotate: false
+  xy: 213, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0009
+  rotate: false
+  xy: 424, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0010
+  rotate: false
+  xy: 635, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0011
+  rotate: false
+  xy: 213, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0012
+  rotate: false
+  xy: 424, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0013
+  rotate: false
+  xy: 635, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0014
+  rotate: false
+  xy: 424, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0015
+  rotate: false
+  xy: 635, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0016
+  rotate: false
+  xy: 635, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+
+saturn2.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0017
+  rotate: false
+  xy: 2, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0018
+  rotate: false
+  xy: 2, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0019
+  rotate: false
+  xy: 213, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0020
+  rotate: false
+  xy: 2, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0021
+  rotate: false
+  xy: 213, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0022
+  rotate: false
+  xy: 424, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0023
+  rotate: false
+  xy: 2, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0024
+  rotate: false
+  xy: 213, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0025
+  rotate: false
+  xy: 424, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0026
+  rotate: false
+  xy: 635, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0027
+  rotate: false
+  xy: 213, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0028
+  rotate: false
+  xy: 424, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0029
+  rotate: false
+  xy: 635, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0030
+  rotate: false
+  xy: 424, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0031
+  rotate: false
+  xy: 635, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0032
+  rotate: false
+  xy: 635, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+
+saturn3.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0033
+  rotate: false
+  xy: 2, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0034
+  rotate: false
+  xy: 2, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0035
+  rotate: false
+  xy: 213, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0036
+  rotate: false
+  xy: 2, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0037
+  rotate: false
+  xy: 213, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0038
+  rotate: false
+  xy: 424, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0039
+  rotate: false
+  xy: 2, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0040
+  rotate: false
+  xy: 213, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0041
+  rotate: false
+  xy: 424, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0042
+  rotate: false
+  xy: 635, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0043
+  rotate: false
+  xy: 213, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0044
+  rotate: false
+  xy: 424, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0045
+  rotate: false
+  xy: 635, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0046
+  rotate: false
+  xy: 424, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0047
+  rotate: false
+  xy: 635, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0048
+  rotate: false
+  xy: 635, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+
+saturn4.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0049
+  rotate: false
+  xy: 2, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0050
+  rotate: false
+  xy: 2, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0051
+  rotate: false
+  xy: 213, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0052
+  rotate: false
+  xy: 2, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0053
+  rotate: false
+  xy: 213, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0054
+  rotate: false
+  xy: 424, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0055
+  rotate: false
+  xy: 2, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0056
+  rotate: false
+  xy: 213, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0057
+  rotate: false
+  xy: 424, 430
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0058
+  rotate: false
+  xy: 635, 644
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0059
+  rotate: false
+  xy: 213, 2
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1
+0060
+  rotate: false
+  xy: 424, 216
+  size: 209, 212
+  orig: 209, 212
+  offset: 0, 0
+  index: -1

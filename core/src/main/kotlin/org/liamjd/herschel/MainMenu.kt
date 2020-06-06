@@ -7,7 +7,6 @@ import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.utils.Align
 import ktx.actors.onClick
-import ktx.actors.onClickEvent
 import ktx.actors.plusAssign
 import ktx.app.KtxScreen
 import ktx.scene2d.*
@@ -36,48 +35,47 @@ class MainMenu(private val herschel: Herschel,
 			label("Herschel", style = "title") {
 				setPosition(stage.width / 2f, stage.height - 64f, Align.center)
 			}
-			table {
+			table() {
 				defaults().padBottom(32f)
 				setFillParent(true)
-				label("New Game") {
-					// tooltips are causing problems with my background
+				label("New Game","mainMenu") {
 					onEnter {
 						changeSkin("mainMenuHover",this@MainMenu.skin)
 					}
 					onExit {
-						changeSkin(this@MainMenu.skin)
+						changeSkin("mainMenu",this@MainMenu.skin)
 					}
-					textTooltip("Start a new game of Herschel", skin = this@MainMenu.skin)
+					// tooltips are causing problems with my background
+					textTooltip("Start a new game of Herschel", skin = this@MainMenu.skin, style = "simple")
 					onClick {
 						stage.clear()
 						herschel.setScreen<NewGame>()
 					}
 				}.cell(row = true)
-				label("Load Game") {
+				label("Load Game","mainMenu") {
 					onEnter {
 						changeSkin("mainMenuHover",this@MainMenu.skin)
 					}
 					onExit {
-						changeSkin(this@MainMenu.skin)
+						changeSkin("mainMenu",this@MainMenu.skin)
 					}
 				}.cell(row = true)
-				label("Settings") {
+				label("Settings","mainMenu") {
 					onEnter {
 						changeSkin("mainMenuHover",this@MainMenu.skin)
 					}
 					onExit {
-						changeSkin(this@MainMenu.skin)
+						changeSkin("mainMenu",this@MainMenu.skin)
 					}
 				}.cell(row = true)
-				label("Quit") {
+				label("Quit","mainMenu") {
 					onEnter {
 						changeSkin("mainMenuHover",this@MainMenu.skin)
 					}
 					onExit {
-						changeSkin(this@MainMenu.skin)
+						changeSkin("mainMenu",this@MainMenu.skin)
 					}
-					onClickEvent { inputEvent, actor ->
-						println("$actor clicked by $inputEvent!")
+					onClick {
 						Gdx.app.exit()
 					}
 				}.cell(row = true)

@@ -85,10 +85,10 @@ inline fun AnimationActor.onHover(crossinline onEnterFunction: () -> Unit, cross
  */
 @Scene2dDsl
 @OptIn(ExperimentalContracts::class)
-fun RootWidget.animation(name: String, animation: Animation<TextureRegion>,
-						 xScale: Float = 1f,
-						 yScale: Float = 1f,
-						 init: AnimationActor.() -> Unit = {}) : AnimationActor {
+fun RootWidget.planet(name: String, animation: Animation<TextureRegion>,
+					  xScale: Float = 1f,
+					  yScale: Float = 1f,
+					  init: AnimationActor.() -> Unit = {}) : AnimationActor {
 	contract { callsInPlace(init, InvocationKind.EXACTLY_ONCE) }
 	return storeActor(AnimationActor(name, animation, xScale, yScale)).apply(init)
 }

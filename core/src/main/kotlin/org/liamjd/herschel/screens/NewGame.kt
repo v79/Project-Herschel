@@ -76,7 +76,6 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 							onClick {
 								with(countryDetails) {
 									setText(hq.flavourText)
-									width = 100f
 									isVisible = true
 								}
 							}
@@ -85,11 +84,12 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 					}
 				}
 				countryDetails = label("","new-game-player-name") { cell ->
+					setText(hqs.first().flavourText)
 					setAlignment(Align.topLeft)
 					setWrap(true)
 					cell.colspan(3)
 					cell.fill()
-					isVisible = false
+					isVisible = true
 				}
 
 				row()
@@ -104,6 +104,7 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 					cell.align(Align.right)
 				}
 				val nicknameField = textField(style="new-game-player-name") { _ ->
+					text = "Liam"
 					onChange {
 						startButton.isDisabled = this.text.isEmpty()
 					}
