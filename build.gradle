@@ -47,27 +47,20 @@ subprojects {
 
 // Run `gradle pack` task to generate skin.atlas file at assets/ui.
 import com.badlogic.gdx.tools.texturepacker.TexturePacker
-task packEarth {
-  doLast {
-    // Note that if you need multiple atlases, you can duplicate the
-    // TexturePacker.process invocation and change paths to generate
-    // additional atlases with this task.
-    TexturePacker.process(
-            'raw/planets/earth',           // Raw assets path.
-            'assets/planets',        // Output directory.
-            'earth'              // Name of the generated atlas (without extension).
-    )
-  }
-}
-task packJupiter {
-  doLast {
-    // Note that if you need multiple atlases, you can duplicate the
-    // TexturePacker.process invocation and change paths to generate
-    // additional atlases with this task.
-    TexturePacker.process(
-            'raw/planets/jupiter',           // Raw assets path.
-            'assets/planets',        // Output directory.
-            'jupiter'              // Name of the generated atlas (without extension).
-    )
+
+def planets = ['mercury','venus','earth','mars','jupiter','saturn','uranus','neptune','pluto']
+
+task packPlanets {
+  planets.each { p ->
+    doLast {
+      // Note that if you need multiple atlases, you can duplicate the
+      // TexturePacker.process invocation and change paths to generate
+      // additional atlases with this task.
+      TexturePacker.process(
+              "raw/planets/${p}",           // Raw assets path.
+              'assets/planets',        // Output directory.
+              p             // Name of the generated atlas (without extension).
+      )
+    }
   }
 }

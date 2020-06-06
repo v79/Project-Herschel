@@ -16,13 +16,13 @@
                     "isDwarf": false,
                     "rings": 0,
                     "moons": 0,
-                    "textureAtlas": "",
+                    "textureAtlas": "planets/mercury.atlas",
                     "baseScience": {
-                        "PHYSICS": 0.0,
-                        "CHEMISTRY": 0.0,
+                        "PHYSICS": 2.0,
+                        "CHEMISTRY": 2.0,
                         "BIOLOGY": 1.0,
-                        "ENGINEERING": 1.0,
-                        "PSYCHOLOGY": 0.0
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 2.0
                     },
                     "modifiers": {
                         "Tidally locked": {
@@ -39,13 +39,13 @@
                     "isDwarf": false,
                     "rings": 0,
                     "moons": 0,
-                    "textureAtlas": "",
+                    "textureAtlas": "planets/venus.atlas",
                     "baseScience": {
-                        "PHYSICS": 2.0,
-                        "CHEMISTRY": 1.0,
-                        "BIOLOGY": 0.0,
-                        "ENGINEERING": 0.0,
-                        "PSYCHOLOGY": 0.0
+                        "PHYSICS": 1.0,
+                        "CHEMISTRY": 0.0,
+                        "BIOLOGY": 2.0,
+                        "ENGINEERING": 2.0,
+                        "PSYCHOLOGY": 1.0
                     },
                     "modifiers": {
                     }
@@ -60,11 +60,11 @@
                     "moons": 1,
                     "textureAtlas": "planets/earth.atlas",
                     "baseScience": {
-                        "PHYSICS": 2.0,
-                        "CHEMISTRY": 2.0,
-                        "BIOLOGY": 0.0,
+                        "PHYSICS": 1.0,
+                        "CHEMISTRY": 1.0,
+                        "BIOLOGY": 1.0,
                         "ENGINEERING": 0.0,
-                        "PSYCHOLOGY": 0.0
+                        "PSYCHOLOGY": 2.0
                     },
                     "modifiers": {
                         "Population": {
@@ -81,13 +81,13 @@
                     "isDwarf": false,
                     "rings": 0,
                     "moons": 2,
-                    "textureAtlas": "",
+                    "textureAtlas": "planets/mars.atlas",
                     "baseScience": {
-                        "PHYSICS": 0.0,
+                        "PHYSICS": 2.0,
                         "CHEMISTRY": 0.0,
-                        "BIOLOGY": 0.0,
+                        "BIOLOGY": 1.0,
                         "ENGINEERING": 1.0,
-                        "PSYCHOLOGY": 2.0
+                        "PSYCHOLOGY": 1.0
                     },
                     "modifiers": {
                     }
@@ -102,9 +102,9 @@
                     "moons": 79,
                     "textureAtlas": "planets/jupiter.atlas",
                     "baseScience": {
-                        "PHYSICS": 0.0,
+                        "PHYSICS": 2.0,
                         "CHEMISTRY": 0.0,
-                        "BIOLOGY": 1.0,
+                        "BIOLOGY": 2.0,
                         "ENGINEERING": 2.0,
                         "PSYCHOLOGY": 2.0
                     },
@@ -119,13 +119,13 @@
                     "isDwarf": false,
                     "rings": 4,
                     "moons": 82,
-                    "textureAtlas": "",
+                    "textureAtlas": "planets/saturn.atlas",
                     "baseScience": {
-                        "PHYSICS": 1.0,
+                        "PHYSICS": 0.0,
                         "CHEMISTRY": 0.0,
-                        "BIOLOGY": 1.0,
+                        "BIOLOGY": 0.0,
                         "ENGINEERING": 0.0,
-                        "PSYCHOLOGY": 0.0
+                        "PSYCHOLOGY": 2.0
                     },
                     "modifiers": {
                     }
@@ -138,13 +138,13 @@
                     "isDwarf": false,
                     "rings": 0,
                     "moons": 27,
-                    "textureAtlas": "",
+                    "textureAtlas": "planets/uranus.atlas",
                     "baseScience": {
-                        "PHYSICS": 0.0,
-                        "CHEMISTRY": 1.0,
-                        "BIOLOGY": 1.0,
-                        "ENGINEERING": 1.0,
-                        "PSYCHOLOGY": 2.0
+                        "PHYSICS": 1.0,
+                        "CHEMISTRY": 2.0,
+                        "BIOLOGY": 2.0,
+                        "ENGINEERING": 2.0,
+                        "PSYCHOLOGY": 1.0
                     },
                     "modifiers": {
                     }
@@ -157,13 +157,13 @@
                     "isDwarf": false,
                     "rings": 1,
                     "moons": 14,
-                    "textureAtlas": "",
+                    "textureAtlas": "planets/neptune.atlas",
                     "baseScience": {
                         "PHYSICS": 1.0,
-                        "CHEMISTRY": 2.0,
-                        "BIOLOGY": 2.0,
-                        "ENGINEERING": 2.0,
-                        "PSYCHOLOGY": 0.0
+                        "CHEMISTRY": 0.0,
+                        "BIOLOGY": 0.0,
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 1.0
                     },
                     "modifiers": {
                     }
@@ -176,12 +176,12 @@
                     "isDwarf": true,
                     "rings": 0,
                     "moons": 1,
-                    "textureAtlas": "",
+                    "textureAtlas": "planets/pluto.atlas",
                     "baseScience": {
                         "PHYSICS": 0.0,
-                        "CHEMISTRY": 2.0,
-                        "BIOLOGY": 0.0,
-                        "ENGINEERING": 0.0,
+                        "CHEMISTRY": 1.0,
+                        "BIOLOGY": 1.0,
+                        "ENGINEERING": 1.0,
                         "PSYCHOLOGY": 1.0
                     },
                     "modifiers": {

@@ -23,17 +23,34 @@ object SolSystemBuilder {
 	private fun buildOurSolarSystem() {
 
 		val solPlanets = ArrayList<Planet>()
-		val mercury = Planet("Mercury",PlanetClass.ROCKY,0.38f,0xeeeeee, isDwarf = false, rings = 0, moons = 0)
-		val venus = Planet("Venus",PlanetClass.TOXIC,0.95f, 0xFFB200, isDwarf = false, rings = 0, moons = 0)
-		val earth = Planet("Earth",PlanetClass.TERRA,1f, 0x057DFF, isDwarf = false, rings = 0, moons = 1)
-		earth.textureAtlas = "planets/earth.atlas"
-		val mars = Planet("Mars",PlanetClass.TERRA,0.53f, 0xFF4D21, isDwarf = false, rings = 0, moons = 2)
-		val jupiter = Planet("Jupiter",PlanetClass.GAS_GIANT,1200f,0xFFD2BF,false,rings = 1, moons = 79)
-		jupiter.textureAtlas = "planets/jupiter.atlas"
-		val saturn = Planet("Saturn",PlanetClass.GAS_GIANT,945f,0xFFF282,isDwarf = false,rings = 4,moons = 82)
-		val uranus = Planet("Uranus",PlanetClass.ICE_GIANT,400f,0xAFFCFF,false, rings = 0, moons = 27)
-		val neptune = Planet("Neptune",PlanetClass.ICE_GIANT,388f,0x60A8FF,isDwarf = false,rings = 1,moons = 14)
-		val pluto = Planet("Pluto",PlanetClass.ROCKY,0.16f,0xFBF9FF,isDwarf = true,rings = 0, moons = 1)
+		val mercury = Planet("Mercury",PlanetClass.ROCKY,0.38f,0xeeeeee, isDwarf = false, rings = 0, moons = 0).apply {
+			textureAtlas = "planets/mercury.atlas"
+		}
+
+		val venus = Planet("Venus",PlanetClass.TOXIC,0.95f, 0xFFB200, isDwarf = false, rings = 0, moons = 0).apply {
+			textureAtlas = "planets/venus.atlas"
+		}
+		val earth = Planet("Earth",PlanetClass.TERRA,1f, 0x057DFF, isDwarf = false, rings = 0, moons = 1).apply {
+			textureAtlas = "planets/earth.atlas"
+		}
+		val mars = Planet("Mars",PlanetClass.TERRA,0.53f, 0xFF4D21, isDwarf = false, rings = 0, moons = 2).apply {
+			textureAtlas = "planets/mars.atlas"
+		}
+		val jupiter = Planet("Jupiter",PlanetClass.GAS_GIANT,1200f,0xFFD2BF,false,rings = 1, moons = 79).apply {
+			textureAtlas = "planets/jupiter.atlas"
+		}
+		val saturn = Planet("Saturn",PlanetClass.GAS_GIANT,945f,0xFFF282,isDwarf = false,rings = 4,moons = 82).apply {
+			textureAtlas = "planets/saturn.atlas"
+		}
+		val uranus = Planet("Uranus",PlanetClass.ICE_GIANT,400f,0xAFFCFF,false, rings = 0, moons = 27).apply {
+			textureAtlas = "planets/uranus.atlas"
+		}
+		val neptune = Planet("Neptune",PlanetClass.ICE_GIANT,388f,0x60A8FF,isDwarf = false,rings = 1,moons = 14).apply {
+			textureAtlas = "planets/neptune.atlas"
+		}
+		val pluto = Planet("Pluto",PlanetClass.ROCKY,0.16f,0xFBF9FF,isDwarf = true,rings = 0, moons = 1).apply {
+			textureAtlas = "planets/pluto.atlas"
+		}
 		solPlanets.addAll(arrayOf(mercury,venus,earth,mars,jupiter,saturn,uranus,neptune,pluto))
 		solPlanets.forEach { p ->
 			Science.values().forEach { s ->

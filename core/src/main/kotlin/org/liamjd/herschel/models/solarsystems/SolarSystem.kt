@@ -14,7 +14,6 @@ class SolarSystem(val star: Star, val isBinary: Boolean, val planets: List<Plane
 
 @Serializable
 class Planet(val name: String, val planetClass: PlanetClass, val scale: Float, val color: HexColor, val isDwarf: Boolean, val rings: Int, val moons: Int, var textureAtlas: String? = "") {
-
 	val baseScience: MutableMap<Science,Float> = mutableMapOf()
 	val modifiers: MutableMap<String,Attribute> = mutableMapOf()
 }
@@ -54,7 +53,7 @@ enum class StarClass(val sizeRange: IntRange) {
 	BLACK_HOLE(99999999..999999999)
 }
 
-enum class PlanetClass(name: String) {
+enum class PlanetClass(className: String) {
 	GAS_GIANT("Gas Giant"),
 	ICE_GIANT("Ice Giant"),
 	TERRA("Earth-like"),
@@ -62,6 +61,7 @@ enum class PlanetClass(name: String) {
 	TOXIC("Toxic")
 }
 
+val modifiers: MutableMap<String,Attribute> = mutableMapOf()
 @Serializable
 sealed class Attribute {
 	@Serializable
