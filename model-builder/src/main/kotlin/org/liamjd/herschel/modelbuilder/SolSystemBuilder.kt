@@ -26,8 +26,10 @@ object SolSystemBuilder {
 		val mercury = Planet("Mercury",PlanetClass.ROCKY,0.38f,0xeeeeee, isDwarf = false, rings = 0, moons = 0)
 		val venus = Planet("Venus",PlanetClass.TOXIC,0.95f, 0xFFB200, isDwarf = false, rings = 0, moons = 0)
 		val earth = Planet("Earth",PlanetClass.TERRA,1f, 0x057DFF, isDwarf = false, rings = 0, moons = 1)
+		earth.textureAtlas = "planets/earth.atlas"
 		val mars = Planet("Mars",PlanetClass.TERRA,0.53f, 0xFF4D21, isDwarf = false, rings = 0, moons = 2)
 		val jupiter = Planet("Jupiter",PlanetClass.GAS_GIANT,1200f,0xFFD2BF,false,rings = 1, moons = 79)
+		jupiter.textureAtlas = "planets/jupiter.atlas"
 		val saturn = Planet("Saturn",PlanetClass.GAS_GIANT,945f,0xFFF282,isDwarf = false,rings = 4,moons = 82)
 		val uranus = Planet("Uranus",PlanetClass.ICE_GIANT,400f,0xAFFCFF,false, rings = 0, moons = 27)
 		val neptune = Planet("Neptune",PlanetClass.ICE_GIANT,388f,0x60A8FF,isDwarf = false,rings = 1,moons = 14)

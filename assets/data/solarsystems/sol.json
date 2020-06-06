@@ -1,0 +1,194 @@
+{
+    "solarsystem": [
+        {
+            "star": {
+                "name": "Sol",
+                "starClass": "YELLOW_DWARF",
+                "color": 16776960
+            },
+            "isBinary": false,
+            "planets": [
+                {
+                    "name": "Mercury",
+                    "planetClass": "ROCKY",
+                    "scale": 0.38,
+                    "color": 15658734,
+                    "isDwarf": false,
+                    "rings": 0,
+                    "moons": 0,
+                    "textureAtlas": "",
+                    "baseScience": {
+                        "PHYSICS": 0.0,
+                        "CHEMISTRY": 0.0,
+                        "BIOLOGY": 1.0,
+                        "ENGINEERING": 1.0,
+                        "PSYCHOLOGY": 0.0
+                    },
+                    "modifiers": {
+                        "Tidally locked": {
+                            "type": "org.liamjd.herschel.models.solarsystems.Attribute.bValue",
+                            "value": true
+                        }
+                    }
+                },
+                {
+                    "name": "Venus",
+                    "planetClass": "TOXIC",
+                    "scale": 0.95,
+                    "color": 16757248,
+                    "isDwarf": false,
+                    "rings": 0,
+                    "moons": 0,
+                    "textureAtlas": "",
+                    "baseScience": {
+                        "PHYSICS": 2.0,
+                        "CHEMISTRY": 1.0,
+                        "BIOLOGY": 0.0,
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 0.0
+                    },
+                    "modifiers": {
+                    }
+                },
+                {
+                    "name": "Earth",
+                    "planetClass": "TERRA",
+                    "scale": 1.0,
+                    "color": 359935,
+                    "isDwarf": false,
+                    "rings": 0,
+                    "moons": 1,
+                    "textureAtlas": "planets/earth.atlas",
+                    "baseScience": {
+                        "PHYSICS": 2.0,
+                        "CHEMISTRY": 2.0,
+                        "BIOLOGY": 0.0,
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 0.0
+                    },
+                    "modifiers": {
+                        "Population": {
+                            "type": "org.liamjd.herschel.models.solarsystems.Attribute.lValue",
+                            "value": 7000000000
+                        }
+                    }
+                },
+                {
+                    "name": "Mars",
+                    "planetClass": "TERRA",
+                    "scale": 0.53,
+                    "color": 16731425,
+                    "isDwarf": false,
+                    "rings": 0,
+                    "moons": 2,
+                    "textureAtlas": "",
+                    "baseScience": {
+                        "PHYSICS": 0.0,
+                        "CHEMISTRY": 0.0,
+                        "BIOLOGY": 0.0,
+                        "ENGINEERING": 1.0,
+                        "PSYCHOLOGY": 2.0
+                    },
+                    "modifiers": {
+                    }
+                },
+                {
+                    "name": "Jupiter",
+                    "planetClass": "GAS_GIANT",
+                    "scale": 1200.0,
+                    "color": 16765631,
+                    "isDwarf": false,
+                    "rings": 1,
+                    "moons": 79,
+                    "textureAtlas": "planets/jupiter.atlas",
+                    "baseScience": {
+                        "PHYSICS": 0.0,
+                        "CHEMISTRY": 0.0,
+                        "BIOLOGY": 1.0,
+                        "ENGINEERING": 2.0,
+                        "PSYCHOLOGY": 2.0
+                    },
+                    "modifiers": {
+                    }
+                },
+                {
+                    "name": "Saturn",
+                    "planetClass": "GAS_GIANT",
+                    "scale": 945.0,
+                    "color": 16773762,
+                    "isDwarf": false,
+                    "rings": 4,
+                    "moons": 82,
+                    "textureAtlas": "",
+                    "baseScience": {
+                        "PHYSICS": 1.0,
+                        "CHEMISTRY": 0.0,
+                        "BIOLOGY": 1.0,
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 0.0
+                    },
+                    "modifiers": {
+                    }
+                },
+                {
+                    "name": "Uranus",
+                    "planetClass": "ICE_GIANT",
+                    "scale": 400.0,
+                    "color": 11533567,
+                    "isDwarf": false,
+                    "rings": 0,
+                    "moons": 27,
+                    "textureAtlas": "",
+                    "baseScience": {
+                        "PHYSICS": 0.0,
+                        "CHEMISTRY": 1.0,
+                        "BIOLOGY": 1.0,
+                        "ENGINEERING": 1.0,
+                        "PSYCHOLOGY": 2.0
+                    },
+                    "modifiers": {
+                    }
+                },
+                {
+                    "name": "Neptune",
+                    "planetClass": "ICE_GIANT",
+                    "scale": 388.0,
+                    "color": 6334719,
+                    "isDwarf": false,
+                    "rings": 1,
+                    "moons": 14,
+                    "textureAtlas": "",
+                    "baseScience": {
+                        "PHYSICS": 1.0,
+                        "CHEMISTRY": 2.0,
+                        "BIOLOGY": 2.0,
+                        "ENGINEERING": 2.0,
+                        "PSYCHOLOGY": 0.0
+                    },
+                    "modifiers": {
+                    }
+                },
+                {
+                    "name": "Pluto",
+                    "planetClass": "ROCKY",
+                    "scale": 0.16,
+                    "color": 16513535,
+                    "isDwarf": true,
+                    "rings": 0,
+                    "moons": 1,
+                    "textureAtlas": "",
+                    "baseScience": {
+                        "PHYSICS": 0.0,
+                        "CHEMISTRY": 2.0,
+                        "BIOLOGY": 0.0,
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 1.0
+                    },
+                    "modifiers": {
+                    }
+                }
+            ],
+            "asteroidBeltPosition": 3
+        }
+    ]
+}

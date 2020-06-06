@@ -45,7 +45,7 @@ class AnimationActor(name: String, val animation: Animation<TextureRegion>, val 
 			haloRenderer.setProjectionMatrix(stage.camera.combined)
 			haloRenderer.begin(ShapeRenderer.ShapeType.Line)
 			haloRenderer.setColor(Color.WHITE)
-			haloRenderer.circle(x + (width*scaleX / 2f),y + (height*scaleY / 2f),((width * scaleX) / 2f))
+			haloRenderer.circle(x + (width*scaleX / 2f),y + (height*scaleY / 2f),((width * scaleX) / 2f) + 5f)
 			haloRenderer.end()
 			batch.begin()
 		}

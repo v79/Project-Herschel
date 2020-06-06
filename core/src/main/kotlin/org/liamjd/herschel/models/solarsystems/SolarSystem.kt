@@ -13,7 +13,7 @@ class SolarSystem(val star: Star, val isBinary: Boolean, val planets: List<Plane
 }
 
 @Serializable
-class Planet(val name: String, val planetClass: PlanetClass, val scale: Float, val color: HexColor, val isDwarf: Boolean, val rings: Int, val moons: Int) {
+class Planet(val name: String, val planetClass: PlanetClass, val scale: Float, val color: HexColor, val isDwarf: Boolean, val rings: Int, val moons: Int, var textureAtlas: String? = "") {
 
 	val baseScience: MutableMap<Science,Float> = mutableMapOf()
 	val modifiers: MutableMap<String,Attribute> = mutableMapOf()

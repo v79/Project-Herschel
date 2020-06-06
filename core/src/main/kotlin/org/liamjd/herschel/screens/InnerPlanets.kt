@@ -4,7 +4,9 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Animation
+import com.badlogic.gdx.graphics.g2d.Animation.PlayMode
 import com.badlogic.gdx.graphics.g2d.Batch
+import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType
@@ -28,7 +30,6 @@ import org.liamjd.herschel.models.solarsystems.SolarSystem
 import org.liamjd.herschel.services.newgame.GameSetup
 import org.liamjd.herschel.uicomponents.scienceIcon
 import kotlin.random.Random
-import com.badlogic.gdx.utils.Array as GdxArray
 
 
 class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin, setup: GameSetup) : AbstractGameplayScreen(herschel, stage, skin) {
@@ -44,6 +45,7 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin, setup: GameSetu
 	var modalVisible = false
 	val solarSystem: SolarSystem
 	var circleHighlight: ShapeRenderer = ShapeRenderer()
+	lateinit var earthAnimation: Animation<TextureRegion>
 
 	init {
 		// create a custom actor for displaying a texture image
@@ -67,21 +69,29 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin, setup: GameSetu
 		windowCloseButton.setSize(24f, 24f)
 
 		// Load the sprite sheet as a Texture
-		val redPlanetTextureSheet = Texture(Gdx.files.internal("ui/red-planet-spritesheet.png"))
-		val redPlanetHeight = redPlanetTextureSheet.height / 4
+//		val redPlanetTextureSheet = Texture(Gdx.files.internal("planets/planets.png"))
+		val planetTextureAtlas = TextureAtlas(Gdx.files.internal("planets/earth.atlas"))
+		val planetSSX = 4
+		val planetSSY = 4
+//		val redPlanetHeight = redPlanetTextureSheet.height / planetSSY
 		// Use the split utility method to create a 2D array of TextureRegions. This is
 		// possible because this sprite sheet contains frames of equal size and they are
 		// all aligned.
-		val tmpRegion = TextureRegion.split(redPlanetTextureSheet, redPlanetTextureSheet.width / 5, redPlanetHeight)
+
+		earthAnimation = Animation<TextureRegion>(0.1f, planetTextureAtlas.regions, PlayMode.LOOP)
+
+		println("earthAnimation duration ${earthAnimation.animationDuration}")
+
+//		val tmpRegion = TextureRegion.split(redPlanetTextureSheet, redPlanetTextureSheet.width / planetSSX, redPlanetHeight)
 		// Place the regions into a 1D array in the correct order, starting from the top
 		// left, going across first. The Animation constructor requires a 1D array.
-		val redPlanetFrames = GdxArray<TextureRegion>(5 * 4)
+//		val redPlanetFrames = GdxArray<TextureRegion>(7 * 7)
 
-		for (i in 0 until 4) {
-			for (j in 0 until 2) {
-				redPlanetFrames.add(tmpRegion[i][j])
-			}
-		}
+//		for (i in 0 until planetSSX-1) {
+//			for (j in 0 until planetSSY-1) {
+//				redPlanetFrames.add(tmpRegion[i][j])
+//			}
+//		}
 
 		// add an actor to the stage directly
 		stage += backgroundActor
@@ -129,13 +139,12 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin, setup: GameSetu
 			table {
 				setFillParent(true) // for the primary layout
 				debug()
-//				padding(10f, 10f, 5f, 5f)
 				align(Align.top)
-//
 
 				table {
-					setBackground(screenSkin.getDrawable("ui-background-blue"))
+					background = screenSkin.getDrawable("ui-background-blue")
 					debug()
+
 
 					textButton("Main Menu") { cell ->
 						cell.padLeft(10f)
@@ -150,7 +159,6 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin, setup: GameSetu
 					}
 					horizontalGroup { cell ->
 						space(3f)
-//						cell.expandX()
 						cell.align(Align.left)
 
 						gameState.scienceIcons.forEach { science ->
@@ -175,8 +183,6 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin, setup: GameSetu
 				row().expandY().align(Align.bottom) // create a new row, push it to the bottom
 				align(Align.bottomRight)
 				textButton("Next turn") { cell ->
-//					cell.colspan(4)
-//					cell.padRight(10f)
 					cell.expandX()
 					cell.expandY()
 					cell.align(Align.bottomRight)
@@ -194,9 +200,11 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin, setup: GameSetu
 				isModal = false
 				isMovable = true
 				isVisible = false
+				titleTable.add(windowCloseButton)
+				windowCloseButton.onClick { isVisible = false }
 			}
 
-			generatePlanets(solarSystem.planets, redPlanetFrames, redPlanetHeight, planetWindow)
+			generatePlanets(solarSystem.planets, earthAnimation.getKeyFrame(0f).regionHeight, planetWindow)
 		}
 
 		// black overlay for modal dialogs
@@ -233,14 +241,19 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin, setup: GameSetu
 		}
 	}
 
-	private fun @Scene2dDsl StageWidget.generatePlanets(planetList: List<Planet>, redPlanetFrames: com.badlogic.gdx.utils.Array<TextureRegion>, redPlanetHeight: Int, planetWindow: KWindow) {
+	private fun @Scene2dDsl StageWidget.generatePlanets(planetList: List<Planet>, textureHeight: Int, planetWindow: KWindow) {
 		planetList.forEachIndexed { index, planet ->
 			val seperator = stage.width / planetList.size
 
 			val drawSize = MathUtils.clamp(planet.scale / 4f,0.05f,0.3f) + planet.scale / 10000
-			println("${planet.name} x: ${index.toFloat() * seperator}, scale: ${planet.scale}, drawn at $drawSize}")
-			planet(name = planet.name, animation = Animation<TextureRegion>(0.5f, redPlanetFrames), xScale = drawSize, yScale = drawSize) {
-				setPosition((index.toFloat() * seperator), ((stage.height / 2) - (redPlanetHeight * this.yScale) / 2))
+//			println("${planet.name} x: ${index.toFloat() * seperator}, scale: ${planet.scale}, drawn at $drawSize}")
+			val animation = if(planet.textureAtlas != null && planet.textureAtlas!!.isNotEmpty()) {
+				Animation<TextureRegion>(0.1f, TextureAtlas(Gdx.files.internal(planet.textureAtlas)).regions, PlayMode.LOOP)
+			} else {
+				earthAnimation
+			}
+			planet(name = planet.name, animation = animation, xScale = drawSize, yScale = drawSize) {
+				setPosition((index.toFloat() * seperator), ((stage.height / 2) - (textureHeight * this.yScale) / 2))
 				onHover(onEnterFunction = { zoom() }, onExitFunction = { resetZoom() }) {}
 				onClick {
 					println("onClick ${planet.name}")
@@ -248,8 +261,7 @@ class InnerPlanets(herschel: Herschel, stage: Stage, skin: Skin, setup: GameSetu
 					planetWindow.clearChildren()
 					planetWindow.titleLabel.setText("${planet.name}")
 
-					planetWindow.titleTable.add(windowCloseButton)
-					windowCloseButton.onClick { planetWindow.isVisible = false }
+
 
 					planetWindow.verticalGroup {
 						val sb: StringBuilder = StringBuilder()
