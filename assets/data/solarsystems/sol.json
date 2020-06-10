@@ -17,12 +17,13 @@
                     "rings": 0,
                     "moons": 0,
                     "textureAtlas": "planets/mercury.atlas",
+                    "distanceFromSun": 0.39,
                     "baseScience": {
                         "PHYSICS": 2.0,
                         "CHEMISTRY": 2.0,
-                        "BIOLOGY": 1.0,
-                        "ENGINEERING": 0.0,
-                        "PSYCHOLOGY": 2.0
+                        "BIOLOGY": 0.0,
+                        "ENGINEERING": 1.0,
+                        "PSYCHOLOGY": 0.0
                     },
                     "modifiers": {
                         "Tidally locked": {
@@ -40,10 +41,11 @@
                     "rings": 0,
                     "moons": 0,
                     "textureAtlas": "planets/venus.atlas",
+                    "distanceFromSun": 0.72,
                     "baseScience": {
-                        "PHYSICS": 1.0,
+                        "PHYSICS": 2.0,
                         "CHEMISTRY": 0.0,
-                        "BIOLOGY": 2.0,
+                        "BIOLOGY": 0.0,
                         "ENGINEERING": 2.0,
                         "PSYCHOLOGY": 1.0
                     },
@@ -59,9 +61,10 @@
                     "rings": 0,
                     "moons": 1,
                     "textureAtlas": "planets/earth.atlas",
+                    "distanceFromSun": 1.0,
                     "baseScience": {
-                        "PHYSICS": 1.0,
-                        "CHEMISTRY": 1.0,
+                        "PHYSICS": 0.0,
+                        "CHEMISTRY": 2.0,
                         "BIOLOGY": 1.0,
                         "ENGINEERING": 0.0,
                         "PSYCHOLOGY": 2.0
@@ -82,10 +85,11 @@
                     "rings": 0,
                     "moons": 2,
                     "textureAtlas": "planets/mars.atlas",
+                    "distanceFromSun": 1.52,
                     "baseScience": {
-                        "PHYSICS": 2.0,
-                        "CHEMISTRY": 0.0,
-                        "BIOLOGY": 1.0,
+                        "PHYSICS": 1.0,
+                        "CHEMISTRY": 2.0,
+                        "BIOLOGY": 0.0,
                         "ENGINEERING": 1.0,
                         "PSYCHOLOGY": 1.0
                     },
@@ -101,12 +105,13 @@
                     "rings": 1,
                     "moons": 79,
                     "textureAtlas": "planets/jupiter.atlas",
+                    "distanceFromSun": 5.2,
                     "baseScience": {
-                        "PHYSICS": 2.0,
+                        "PHYSICS": 1.0,
                         "CHEMISTRY": 0.0,
-                        "BIOLOGY": 2.0,
+                        "BIOLOGY": 1.0,
                         "ENGINEERING": 2.0,
-                        "PSYCHOLOGY": 2.0
+                        "PSYCHOLOGY": 0.0
                     },
                     "modifiers": {
                     }
@@ -120,12 +125,13 @@
                     "rings": 4,
                     "moons": 82,
                     "textureAtlas": "planets/saturn.atlas",
+                    "distanceFromSun": 9.6,
                     "baseScience": {
-                        "PHYSICS": 0.0,
+                        "PHYSICS": 2.0,
                         "CHEMISTRY": 0.0,
-                        "BIOLOGY": 0.0,
-                        "ENGINEERING": 0.0,
-                        "PSYCHOLOGY": 2.0
+                        "BIOLOGY": 1.0,
+                        "ENGINEERING": 2.0,
+                        "PSYCHOLOGY": 0.0
                     },
                     "modifiers": {
                     }
@@ -139,12 +145,13 @@
                     "rings": 0,
                     "moons": 27,
                     "textureAtlas": "planets/uranus.atlas",
+                    "distanceFromSun": 19.2,
                     "baseScience": {
-                        "PHYSICS": 1.0,
-                        "CHEMISTRY": 2.0,
-                        "BIOLOGY": 2.0,
+                        "PHYSICS": 2.0,
+                        "CHEMISTRY": 0.0,
+                        "BIOLOGY": 1.0,
                         "ENGINEERING": 2.0,
-                        "PSYCHOLOGY": 1.0
+                        "PSYCHOLOGY": 0.0
                     },
                     "modifiers": {
                     }
@@ -158,12 +165,13 @@
                     "rings": 1,
                     "moons": 14,
                     "textureAtlas": "planets/neptune.atlas",
+                    "distanceFromSun": 30.1,
                     "baseScience": {
-                        "PHYSICS": 1.0,
+                        "PHYSICS": 0.0,
                         "CHEMISTRY": 0.0,
-                        "BIOLOGY": 0.0,
-                        "ENGINEERING": 0.0,
-                        "PSYCHOLOGY": 1.0
+                        "BIOLOGY": 1.0,
+                        "ENGINEERING": 1.0,
+                        "PSYCHOLOGY": 2.0
                     },
                     "modifiers": {
                     }
@@ -177,12 +185,13 @@
                     "rings": 0,
                     "moons": 1,
                     "textureAtlas": "planets/pluto.atlas",
+                    "distanceFromSun": 35.1,
                     "baseScience": {
-                        "PHYSICS": 0.0,
-                        "CHEMISTRY": 1.0,
-                        "BIOLOGY": 1.0,
-                        "ENGINEERING": 1.0,
-                        "PSYCHOLOGY": 1.0
+                        "PHYSICS": 1.0,
+                        "CHEMISTRY": 0.0,
+                        "BIOLOGY": 2.0,
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 2.0
                     },
                     "modifiers": {
                     }

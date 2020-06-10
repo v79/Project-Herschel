@@ -25,7 +25,7 @@ class MainMenu(private val herschel: Herschel,
 		Scene2DSkin.defaultSkin = skin
 
 		// create a custom actor for displaying a texture image
-		val backgroundActor = TextureActor(Texture(Gdx.files.internal("screens/MainMenu/background.png")))
+		val backgroundActor = TextureActor(Texture(Gdx.files.internal("backgrounds/background-7.png")))
 
 		// add an actor to the stage directly
 		stage += backgroundActor

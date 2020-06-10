@@ -18,8 +18,8 @@ object DesktopLauncher {
 	private fun getDefaultConfiguration(): LwjglApplicationConfiguration? {
 		val configuration = LwjglApplicationConfiguration()
 		configuration.title = "Herschel"
-		configuration.width = 1024
-		configuration.height = 768
+		configuration.width = 1440
+		configuration.height = 900
 		for (size in intArrayOf(128, 64, 32, 16)) {
 			configuration.addIcon("libgdx$size.png", FileType.Internal)
 		}

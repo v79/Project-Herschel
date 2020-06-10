@@ -22,7 +22,7 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 	override fun show() {
 		Scene2DSkin.defaultSkin = screenSkin
 
-		val backgroundActor = TextureActor(Texture(Gdx.files.internal("screens/MainMenu/background.png")))
+		val backgroundActor = TextureActor(Texture(Gdx.files.internal("backgrounds/background-7.png")))
 		stage += backgroundActor
 
 		val title = Label("New Game", screenSkin, "title")
@@ -134,7 +134,8 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 							herschel.state = gameState
 
 							hide()
-							herschel.setScreen<InnerPlanets>()
+//							herschel.setScreen<SolSystemTexture>()
+							herschel.setScreen<SolarSystemScreen>()
 						}
 					}
 				}

@@ -22,6 +22,7 @@ dependencies {
   compile "io.github.libktx:ktx-scene2d:$ktxScene2DVersion"
   compile "io.github.libktx:ktx-collections:$ktxCollectionsVersion"
   compile "io.github.libktx:ktx-math:$ktxMathVersion"
+  compile "io.github.libktx:ktx-graphics:$ktxGraphicsVersion"
 
   // kotlinx serialization, for document caching
   compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinSerializationVersion"

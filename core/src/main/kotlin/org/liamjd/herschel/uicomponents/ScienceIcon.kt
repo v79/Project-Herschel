@@ -21,7 +21,6 @@ inline fun <S> KWidget<S>.scienceIcon(
 		skin: Skin = Scene2DSkin.defaultSkin,
 		init: KImageTextButton.(S) -> Unit = {}
 ): KImageTextButton {
-
 	contract { callsInPlace(init, InvocationKind.EXACTLY_ONCE) }
 	return  actor(KImageTextButton(obj.value.toString(), skin, style), init)
 }
