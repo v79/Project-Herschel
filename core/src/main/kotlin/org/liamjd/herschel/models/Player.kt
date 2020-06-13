@@ -6,7 +6,7 @@ import org.liamjd.herschel.extensions.UIModel
 import java.util.*
 
 @Serializable
-class Player(val id: Int, val firstName: String, val familyName: String, val playerNickName: String = "", val gender: Gender, var age: Int = 25) {
+class Player(val id: Int, val firstName: String, val familyName: String, val playerNickName: String = "", val gender: Gender, var age: Int = 25, val hq: HQ) {
 
 	// character name
 	// character gender

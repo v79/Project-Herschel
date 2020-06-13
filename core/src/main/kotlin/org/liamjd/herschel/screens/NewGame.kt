@@ -149,7 +149,7 @@ class NewGame(herschel: Herschel, stage: Stage, skin: Skin, private val setup: G
 	 */
 	private fun initializeGameState(firstName: StringBuilder, lastName: StringBuilder, nickName: String, hq: HQ): GameState {
 		val gameState = GameState()
-		gameState.player = Player(1,firstName.toString(),lastName.toString(), nickName,Gender.MALE,26)
+		gameState.player = Player(1,firstName.toString(),lastName.toString(), nickName,Gender.MALE,26, hq)
 		gameState.year = 2050
 		gameState.era = Era.MARS
 		return gameState

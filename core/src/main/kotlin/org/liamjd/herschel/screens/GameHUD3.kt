@@ -3,10 +3,15 @@ package org.liamjd.herschel.screens
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.math.MathUtils
+import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.ui.Image
+import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Window
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.Align
+import com.payne.games.piemenu.PieMenu
 import ktx.actors.onClick
 import ktx.scene2d.*
 import org.liamjd.herschel.Herschel
@@ -20,15 +25,23 @@ import org.liamjd.herschel.uicomponents.PlanetAnimation
 import org.liamjd.herschel.uicomponents.ScienceIcon
 import org.liamjd.herschel.uicomponents.scienceIcon
 
+
 class GameHUD3(val herschel: Herschel, val screenSkin: Skin) {
 
 	val backgroundActor = TextureActor(Texture(Gdx.files.internal("backgrounds/background-7.png")))
 	val sun: Image
+	private val pieMenuStyle = PieMenu.PieMenuStyle()
 
 	init {
 		Scene2DSkin.defaultSkin = screenSkin
 		sun = scene2d.image("sun")
 		sun.setPosition(-50f,0f)
+		pieMenuStyle.sliceColor = Color.TEAL
+		pieMenuStyle.alternateSliceColor = Color.DARK_GRAY
+		pieMenuStyle.downColor = Color.FOREST
+//		pieMenuStyle.hoverColor = Color.CHARTREUSE
+		pieMenuStyle.circumferenceColor = Color.WHITE
+		pieMenuStyle.backgroundColor = Color.BLACK
 	}
 
 	val gameMenu = buildGameMenu()
@@ -51,7 +64,7 @@ class GameHUD3(val herschel: Herschel, val screenSkin: Skin) {
 				val tt = textTooltip(science.tooltip, style = "simple")
 				onClick {
 					println("Clicked on ${science.name} with value ${science.value}")
-					science.value++
+//					science.value++
 					this.label.setText(science.value.toString())
 					tt.actor.setText("${science.name} now at ${science.value}")
 				}
@@ -85,10 +98,33 @@ class GameHUD3(val herschel: Herschel, val screenSkin: Skin) {
 		add(yearLabel).padRight(10f).growX().right()
 	}
 
+	private val systemOverview = scene2d.table {
+		top().center()
+		label("system summary")
+	}
+
 	private val nextTurnButton = scene2d.textButton("End turn") {
 		onClick {
 			herschel.state.endTurn()
 		}
+	}
+
+
+
+	val pieMenu = PieMenu(screenSkin.getRegion("white-overlay"),pieMenuStyle,80f,0.2f,0f,180f).apply {
+		val buttons = arrayOf("Build","Edicts","Space","Harvest").reversedArray()
+		for (i in buttons) {
+			val pLabel = Label(i,screenSkin)
+			this.addActor(pLabel)
+		}
+		addListener(object : ChangeListener() {
+			override fun changed(event: ChangeEvent?, actor: Actor?) {
+				val alpha: Float = MathUtils.map(0f, amountOfChildren - 1f, 0f, 1f, selectedIndex.toFloat())
+				this@apply.style.backgroundColor.set(Color.NAVY.r,Color.NAVY.g,Color.NAVY.b, alpha)
+			}
+		})
+		pack()
+		setPosition(Gdx.graphics.width /2f,0f,Align.center)
 	}
 
 	val ui = scene2d.table(screenSkin) {
@@ -96,6 +132,8 @@ class GameHUD3(val herschel: Herschel, val screenSkin: Skin) {
 		setFillParent(true)
 		top().left()
 		add(topRow).growX()
+		row()
+		add(systemOverview)
 		row().expandY().bottom().right()
 		add(nextTurnButton)
 	}
@@ -140,7 +178,7 @@ class GameHUD3(val herschel: Herschel, val screenSkin: Skin) {
 
 
 	fun updateYear(era: Era, year: Int) {
-		yearLabel.setText("${era} Year ${year}")
+		yearLabel.setText("$era Year $year")
 	}
 
 	fun updateScienceIcons(updatedScienceIcons: Array<ScienceIcon>) {
@@ -175,7 +213,7 @@ class GameHUD3(val herschel: Herschel, val screenSkin: Skin) {
 			verticalGroup {
 				val sb: StringBuilder = StringBuilder()
 				planet.planet.baseScience.forEach { (s, u) -> sb.appendln("${s.name}: $u ") }
-				label("Science: $sb")
+				label("Science:\n $sb")
 				sb.clear()
 				planet.planet.modifiers.forEach { (k, v) -> sb.append("${k}: ${v}\n") }
 				label("$sb")

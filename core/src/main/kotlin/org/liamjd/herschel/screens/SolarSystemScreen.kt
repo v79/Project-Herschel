@@ -125,7 +125,7 @@ class SolarSystemScreen(herschel: Herschel, stage: Stage, skin: Skin, private va
 				if (amount == -1 && camera.zoom > minZoom) {
 					camera.zoom -= 0.2f
 				}
-				println("camera.zoom ${camera.zoom} (min ${minZoom} max ${maxZoom}")
+				println("camera.zoom ${camera.zoom} (min $minZoom max $maxZoom")
 				return false
 			}
 
@@ -144,6 +144,7 @@ class SolarSystemScreen(herschel: Herschel, stage: Stage, skin: Skin, private va
 		stage += hud.blackOverlay
 		stage += hud.debug
 		stage += hud.planetWindow
+		stage += hud.pieMenu
 		setupHud()
 	}
 

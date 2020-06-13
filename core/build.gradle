@@ -23,6 +23,7 @@ dependencies {
   compile "io.github.libktx:ktx-collections:$ktxCollectionsVersion"
   compile "io.github.libktx:ktx-math:$ktxMathVersion"
   compile "io.github.libktx:ktx-graphics:$ktxGraphicsVersion"
+  api "com.github.payne911:PieMenu:$pieMenuVersion"
 
   // kotlinx serialization, for document caching
   compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinSerializationVersion"
