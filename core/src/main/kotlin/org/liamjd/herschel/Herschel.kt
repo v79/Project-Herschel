@@ -12,7 +12,6 @@ import ktx.inject.Context
 import ktx.inject.register
 import org.liamjd.herschel.models.GameState
 import org.liamjd.herschel.screens.NewGame
-import org.liamjd.herschel.screens.SolSystemTexture
 import org.liamjd.herschel.screens.SolarSystemScreen
 import org.liamjd.herschel.services.newgame.GameSetup
 
@@ -45,7 +44,6 @@ class Herschel : KtxGame<Screen>() {
 			// use DI to add each screen
 			addScreen(MainMenu(inject(), inject(), inject()))
 			addScreen(SolarSystemScreen(inject(), inject(), inject(),inject()))
-			addScreen(SolSystemTexture(inject(), inject(), inject(),inject()))
 			addScreen(NewGame(inject(),inject(),inject(),inject()))
 		}
 		// set the launch screen

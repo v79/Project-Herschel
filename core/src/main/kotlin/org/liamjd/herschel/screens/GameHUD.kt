@@ -223,15 +223,6 @@ class GameHUD(val herschel: Herschel, private val screenSkin: Skin, val setup: G
 	}
 }*/
 
-private fun showBlackOverlay() {
-//		modalVisible = true
-//		blackOverlayImage.isVisible = true
-}
-
-private fun hideBlackOverlay() {
-//		modalVisible = false
-//		blackOverlayImage.isVisible = false
-}
 
 
 /*override fun render(delta: Float) {

@@ -2,6 +2,7 @@ package org.liamjd.herschel.screens
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.GL20
+import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import ktx.app.KtxScreen
@@ -34,4 +35,10 @@ abstract class AbstractGameplayScreen(val herschel: Herschel,
 		stage.root.clearChildren()
 	}
 
+}
+
+inline fun Batch.use(action: () -> Unit) {
+	begin()
+	action()
+	end()
 }
