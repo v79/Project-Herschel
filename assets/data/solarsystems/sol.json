@@ -19,17 +19,13 @@
                     "textureAtlas": "planets/mercury.atlas",
                     "distanceFromSun": 0.39,
                     "baseScience": {
-                        "PHYSICS": 2.0,
+                        "PHYSICS": 1.0,
                         "CHEMISTRY": 2.0,
-                        "BIOLOGY": 0.0,
-                        "ENGINEERING": 1.0,
-                        "PSYCHOLOGY": 0.0
+                        "BIOLOGY": 1.0,
+                        "ENGINEERING": 2.0,
+                        "PSYCHOLOGY": 2.0
                     },
                     "modifiers": {
-                        "Tidally locked": {
-                            "type": "org.liamjd.herschel.models.solarsystems.Attribute.bValue",
-                            "value": true
-                        }
                     }
                 },
                 {
@@ -43,11 +39,11 @@
                     "textureAtlas": "planets/venus.atlas",
                     "distanceFromSun": 0.72,
                     "baseScience": {
-                        "PHYSICS": 2.0,
-                        "CHEMISTRY": 0.0,
-                        "BIOLOGY": 0.0,
-                        "ENGINEERING": 2.0,
-                        "PSYCHOLOGY": 1.0
+                        "PHYSICS": 0.0,
+                        "CHEMISTRY": 2.0,
+                        "BIOLOGY": 1.0,
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 0.0
                     },
                     "modifiers": {
                     }
@@ -63,11 +59,11 @@
                     "textureAtlas": "planets/earth.atlas",
                     "distanceFromSun": 1.0,
                     "baseScience": {
-                        "PHYSICS": 0.0,
-                        "CHEMISTRY": 2.0,
-                        "BIOLOGY": 1.0,
-                        "ENGINEERING": 0.0,
-                        "PSYCHOLOGY": 2.0
+                        "PHYSICS": 1.0,
+                        "CHEMISTRY": 1.0,
+                        "BIOLOGY": 2.0,
+                        "ENGINEERING": 1.0,
+                        "PSYCHOLOGY": 0.0
                     },
                     "modifiers": {
                         "Population": {
@@ -88,10 +84,10 @@
                     "distanceFromSun": 1.52,
                     "baseScience": {
                         "PHYSICS": 1.0,
-                        "CHEMISTRY": 2.0,
+                        "CHEMISTRY": 0.0,
                         "BIOLOGY": 0.0,
-                        "ENGINEERING": 1.0,
-                        "PSYCHOLOGY": 1.0
+                        "ENGINEERING": 2.0,
+                        "PSYCHOLOGY": 2.0
                     },
                     "modifiers": {
                     }
@@ -107,11 +103,11 @@
                     "textureAtlas": "planets/jupiter.atlas",
                     "distanceFromSun": 5.2,
                     "baseScience": {
-                        "PHYSICS": 1.0,
-                        "CHEMISTRY": 0.0,
-                        "BIOLOGY": 1.0,
-                        "ENGINEERING": 2.0,
-                        "PSYCHOLOGY": 0.0
+                        "PHYSICS": 0.0,
+                        "CHEMISTRY": 2.0,
+                        "BIOLOGY": 0.0,
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 2.0
                     },
                     "modifiers": {
                     }
@@ -127,11 +123,11 @@
                     "textureAtlas": "planets/saturn.atlas",
                     "distanceFromSun": 9.6,
                     "baseScience": {
-                        "PHYSICS": 2.0,
-                        "CHEMISTRY": 0.0,
-                        "BIOLOGY": 1.0,
-                        "ENGINEERING": 2.0,
-                        "PSYCHOLOGY": 0.0
+                        "PHYSICS": 1.0,
+                        "CHEMISTRY": 2.0,
+                        "BIOLOGY": 0.0,
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 1.0
                     },
                     "modifiers": {
                     }
@@ -148,10 +144,10 @@
                     "distanceFromSun": 19.2,
                     "baseScience": {
                         "PHYSICS": 2.0,
-                        "CHEMISTRY": 0.0,
-                        "BIOLOGY": 1.0,
-                        "ENGINEERING": 2.0,
-                        "PSYCHOLOGY": 0.0
+                        "CHEMISTRY": 2.0,
+                        "BIOLOGY": 2.0,
+                        "ENGINEERING": 0.0,
+                        "PSYCHOLOGY": 2.0
                     },
                     "modifiers": {
                     }
@@ -168,10 +164,10 @@
                     "distanceFromSun": 30.1,
                     "baseScience": {
                         "PHYSICS": 0.0,
-                        "CHEMISTRY": 0.0,
+                        "CHEMISTRY": 1.0,
                         "BIOLOGY": 1.0,
-                        "ENGINEERING": 1.0,
-                        "PSYCHOLOGY": 2.0
+                        "ENGINEERING": 2.0,
+                        "PSYCHOLOGY": 0.0
                     },
                     "modifiers": {
                     }
@@ -188,10 +184,10 @@
                     "distanceFromSun": 35.1,
                     "baseScience": {
                         "PHYSICS": 1.0,
-                        "CHEMISTRY": 0.0,
+                        "CHEMISTRY": 1.0,
                         "BIOLOGY": 2.0,
-                        "ENGINEERING": 0.0,
-                        "PSYCHOLOGY": 2.0
+                        "ENGINEERING": 2.0,
+                        "PSYCHOLOGY": 0.0
                     },
                     "modifiers": {
                     }

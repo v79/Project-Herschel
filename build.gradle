@@ -7,6 +7,7 @@ buildscript {
     mavenCentral()
     jcenter()
     google()
+    maven { url 'https://jitpack.io' }
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
   }
   dependencies {
@@ -24,7 +25,7 @@ allprojects {
 configure(subprojects) {
   apply plugin: 'java'
   apply plugin: 'kotlin'
-  sourceCompatibility = 1.8
+  sourceCompatibility = 1.11
 }
 
 subprojects {
@@ -34,6 +35,7 @@ subprojects {
     mavenLocal()
     mavenCentral()
     jcenter()
+    maven { url 'https://jitpack.io' }
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
   }
 }

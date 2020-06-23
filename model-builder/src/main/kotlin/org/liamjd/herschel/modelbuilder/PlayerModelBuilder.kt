@@ -2,7 +2,10 @@ package org.liamjd.herschel.modelbuilder
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
-import org.liamjd.herschel.models.*
+import org.liamjd.herschel.models.HQ
+import org.liamjd.herschel.models.HQList
+import org.liamjd.herschel.models.Player
+import org.liamjd.herschel.models.PlayerList
 import java.io.File
 import java.nio.file.Paths
 import java.util.*
@@ -44,7 +47,7 @@ object PlayerModelBuilder {
 	fun buildPlayerList() {
 		val playerList = mutableListOf<Player>()
 
-		playerList.add(Player(1,"Joseph","Joseph Obuya", "",Gender.MALE,26))
+	/*	playerList.add(Player(1,"Joseph","Joseph Obuya", "",Gender.MALE,26))
 		playerList.add(Player(2,"Chima","Kwesi Obama", "", Gender.MALE,27))
 		playerList.add(Player(3,"Marjani","Onyekachukwu Maina", "", Gender.FEMALE,30))
 		playerList.add(Player(4,"Amahle","Inyene Okafor", "", Gender.FEMALE,31))
@@ -59,7 +62,7 @@ object PlayerModelBuilder {
 		playerList.add(Player(13,"Zhong","Lin", "", Gender.FEMALE,32))
 		playerList.add(Player(14,"Bai","Yang", "", Gender.MALE,33))
 		playerList.add(Player(15,"Jia","Chen", "", Gender.MALE,35))
-
+*/
 		val players = PlayerList(playerList)
 		val playerListJson =json.stringify(PlayerList.serializer(),players)
 

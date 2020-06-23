@@ -58,7 +58,6 @@ object SolSystemBuilder {
 			}
 		}
 		earth.modifiers["Population"] = Attribute.lValue(7000000000)
-		mercury.modifiers["Tidally locked"] = Attribute.bValue(true)
 
 		val sol = SolarSystem(Star("Sol", StarClass.YELLOW_DWARF, 0xffff00), false, solPlanets, 3)
 
