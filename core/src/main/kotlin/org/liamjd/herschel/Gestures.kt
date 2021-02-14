@@ -54,4 +54,8 @@ class Gestures(val camera: OrthographicCamera) : GestureDetector.GestureListener
 	override fun pinch(initialPointer1: Vector2?, initialPointer2: Vector2?, pointer1: Vector2?, pointer2: Vector2?): Boolean {
 		TODO("Not yet implemented")
 	}
+
+	override fun scrolled(amountX: Float, amountY: Float): Boolean {
+		TODO("Not yet implemented")
+	}
 }

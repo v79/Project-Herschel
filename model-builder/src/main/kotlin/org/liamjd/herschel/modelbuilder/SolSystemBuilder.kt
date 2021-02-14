@@ -1,7 +1,6 @@
 package org.liamjd.herschel.modelbuilder
 
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
 import org.liamjd.herschel.models.science.Science
 import org.liamjd.herschel.models.solarsystems.*
 import java.io.File
@@ -10,7 +9,6 @@ import kotlin.random.Random
 
 
 object SolSystemBuilder {
-	private val json = Json(JsonConfiguration(prettyPrint = true))
 	private val projectDir: File = Paths.get(".").toAbsolutePath().normalize().toFile()
 
 	private val r = Random(System.currentTimeMillis())
@@ -62,7 +60,7 @@ object SolSystemBuilder {
 		val sol = SolarSystem(Star("Sol", StarClass.YELLOW_DWARF, 0xffff00), false, solPlanets, 3)
 
 		val solList = SolarSystemList(listOf(sol))
-		val solListString = json.stringify(SolarSystemList.serializer(),solList)
+		val solListString = Json.encodeToString(SolarSystemList.serializer(),solList)
 		val solListFile = File(projectDir.absolutePath,"assets/data/solarsystems/sol.json")
 		if(!solListFile.exists()) {
 			solListFile.createNewFile()

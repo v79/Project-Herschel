@@ -115,17 +115,17 @@ class SolarSystemScreen(herschel: Herschel, stage: Stage, skin: Skin, private va
 				return true
 			}
 
-			override fun scrolled(amount: Int): Boolean {
+			override fun scrolled(amountX: Float, amountY: Float): Boolean {
 				// wheel up is -1 - I'm zooming out, making everything smaller, getting closer to minZoom (10f)
 				// wheel down is 1 - I'm zooming in, making everything smaller, getting closer to maxZoom (1f)
 //				println("Camera zoom ${camera.zoom} (max:$maxZoom min:$minZoom) amount: $amount")
-				if (amount == 1 && camera.zoom < maxZoom) {
+				if (amountY == 1.toFloat() && camera.zoom < maxZoom) {
 					camera.zoom += 0.2f
 				}
-				if (amount == -1 && camera.zoom > minZoom) {
+				if (amountY == (-1).toFloat() && camera.zoom > minZoom) {
 					camera.zoom -= 0.2f
 				}
-				println("camera.zoom ${camera.zoom} (min $minZoom max $maxZoom")
+				println("camera.zoom ${camera.zoom} (min $minZoom max $maxZoom)")
 				return false
 			}
 

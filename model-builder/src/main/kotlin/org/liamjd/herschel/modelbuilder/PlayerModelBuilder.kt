@@ -1,7 +1,6 @@
 package org.liamjd.herschel.modelbuilder
 
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
 import org.liamjd.herschel.models.HQ
 import org.liamjd.herschel.models.HQList
 import org.liamjd.herschel.models.Player
@@ -13,7 +12,6 @@ import java.util.*
 
 object PlayerModelBuilder {
 
-	private val json = Json(JsonConfiguration(prettyPrint = true))
 	private val projectDir: File = Paths.get(".").toAbsolutePath().normalize().toFile()
 
 	@JvmStatic
@@ -36,12 +34,12 @@ object PlayerModelBuilder {
 		hqList.add(HQ(UUID.randomUUID(),"São Paulo","Brazil",0.8f, "sci 0.8, mat ++"))
 
 		val hqs = HQList(hqList)
-		val hqListJson = json.stringify(HQList.serializer(),hqs)
+		val hqListJson = Json.encodeToJsonElement(HQList.serializer(),hqs)
 		val hqFile = File(projectDir.absolutePath,"assets/data/players/hqlist.json")
 		if(!hqFile.exists()) {
 			hqFile.createNewFile()
 		}
-		hqFile.writeText(hqListJson)
+		hqFile.writeText(hqListJson.toString())
 	}
 
 	fun buildPlayerList() {
@@ -64,7 +62,7 @@ object PlayerModelBuilder {
 		playerList.add(Player(15,"Jia","Chen", "", Gender.MALE,35))
 */
 		val players = PlayerList(playerList)
-		val playerListJson =json.stringify(PlayerList.serializer(),players)
+		val playerListJson = Json.encodeToString(PlayerList.serializer(),players)
 
 		val playerFile = File(projectDir.absolutePath,"assets/data/players/playerlist.json")
 		if(!playerFile.exists()) {

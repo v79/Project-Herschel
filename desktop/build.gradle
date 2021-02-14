@@ -1,26 +1,49 @@
 apply plugin: 'application'
+apply plugin: 'kotlin'
 
-sourceSets.main.resources.srcDirs += [ rootProject.file('assets').absolutePath ]
+sourceSets.main.resources.srcDirs += [rootProject.file('assets').absolutePath]
 mainClassName = 'org.liamjd.game.v2.desktop.DesktopLauncher'
 sourceCompatibility = 1.8
 
 dependencies {
-  compile project(':core')
-  compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
-  compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-  compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
-  compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
-  compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
+    compile project(':core')
+    compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+    compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 }
 
 jar {
-  archiveName "${appName}-${version}.jar"
-  from { configurations.compile.collect { zipTree(it) } }
-  manifest {
-    attributes 'Main-Class': project.mainClassName
-  }
+    archiveName "${appName}-${version}.jar"
+    from { configurations.compile.collect { zipTree(it) } }
+    manifest {
+        attributes 'Main-Class': project.mainClassName
+    }
 }
 
 run {
-  ignoreExitValue = true
+    ignoreExitValue = true
+}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+repositories {
+    mavenCentral()
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }

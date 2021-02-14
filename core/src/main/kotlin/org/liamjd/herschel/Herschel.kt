@@ -51,7 +51,7 @@ class Herschel : KtxGame<Screen>() {
 	}
 
 	override fun dispose() {
-		context.dispose()
+//		context.dispose()
 	}
 
 	/**
